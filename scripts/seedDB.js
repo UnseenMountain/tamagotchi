@@ -12,7 +12,7 @@ const petSeed = [
         health: 5,
         hatched: false,
         level: 1,
-        attackPower: 1,
+        attackPower: 3,
         multiplayer: 1.5
     }
 ]
@@ -23,7 +23,7 @@ const enemySeed = [
         health: 2,
         level: 1,
         attackPower: 2,
-        EXP: 3
+        EXP: 5
     }
 ];
 
