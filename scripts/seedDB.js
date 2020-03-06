@@ -25,7 +25,7 @@ const enemySeed = [
         attackPower: 2,
         EXP: 3
     }
-]
+];
 
 module.exports = petSeed;
 
