@@ -17,7 +17,7 @@ const Footer = () => {
     authorization, Mongo by Hyejin Kim  
     </Card.Text>
     <Card.Text>
-    Mongod/connection, deployment  Preston Carrol 
+    Mongod/connection, deployment by Preston Carrol 
     </Card.Text>
     <Button href="https://github.com/UnseenMountain/tamagotchi">Go somewhere</Button>
   </Card.Body>
