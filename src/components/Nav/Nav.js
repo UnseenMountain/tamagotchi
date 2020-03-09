@@ -1,16 +1,18 @@
 import React from "react";
 
-import { Container, Navbar } from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 
 function Nav() {
 
     return (
         <div>
-            <Container>
-                <Navbar expand="lg" variant="light" bg="light">
-                    <Navbar.Brand href="#">Tamagotchi Simulator</Navbar.Brand>
-                </Navbar>
-            </Container>
+            
+            <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    
+    
+  </Navbar>
+           
         </div>
 
     )
