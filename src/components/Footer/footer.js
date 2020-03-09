@@ -1,11 +1,13 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 const Footer = () => {
     return ( 
         <Card className="text-center">
 
 <Card.Footer>
+  
   <Card.Body>
+    
     <Card.Title></Card.Title>
     <Card.Text>
      Project lead, character design and react by Will Satcher
