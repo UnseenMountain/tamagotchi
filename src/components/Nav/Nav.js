@@ -8,7 +8,7 @@ function Nav() {
         <div>
             <Container>
                 <Navbar expand="lg" variant="light" bg="light">
-                    <Navbar.Brand href="#">Tamagotchi Simulator</Navbar.Brand>
+                    <Navbar.Brand href="https://github.com/UnseenMountain/tamagotchi">Tamagotchi Simulator</Navbar.Brand>
                 </Navbar>
             </Container>
         </div>

@@ -8,7 +8,7 @@ const Footer = () => {
   <Card.Body>
     <Card.Title></Card.Title>
     <Card.Text>
-     Project lead, character design and react by Will S
+     Project lead, character design and react by Will Satcher
     </Card.Text>
     <Card.Text>
      UI UX and level design by Luke Klymshyn
@@ -19,7 +19,7 @@ const Footer = () => {
     <Card.Text>
     Mongod/connection, deployment by Preston Carrol 
     </Card.Text>
-    <Button href="https://github.com/UnseenMountain/tamagotchi">Go somewhere</Button>
+    
   </Card.Body>
   </Card.Footer>
 </Card>
