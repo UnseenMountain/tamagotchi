@@ -3,9 +3,13 @@ import React from 'react';
 
 
 
-const Game = () => {
+const Game = (prop) => {
     return (
-        <> </>
+        <>
+        
+            
+
+         </>
     );
 }
 
