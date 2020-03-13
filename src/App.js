@@ -14,9 +14,6 @@ import PetMenu from './components/PetMenu/PetMenu.js';
 
 
 
->>>>>>> f7d28fa27e4657a7d9ffb9a2c8eb88cfc76e6a1e
-
-
 function App() {
   return (
     <Router>
@@ -39,6 +36,7 @@ function App() {
           <Route exact path="/Game" component={Game}></Route>
           </PetMenu>
         {/* </Menu> */}
+        </Menu>
         <Footer />
       </div>
     </Router> 
