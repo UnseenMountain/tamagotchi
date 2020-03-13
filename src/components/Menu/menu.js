@@ -10,11 +10,17 @@ function Menu() {
     return (
         <div>
             <button onClick={() => {
-                setMenu({ selectedBattle: 'battle 1' });
-
-            }}>
-                SET MY STATE with Battle 1
-        </button>
+            setMenu({selectedBattle: 'Battle 1'});
+            
+        }}>
+                SET MY STATE with Battle
+        </button> 
+        <button onClick={() => {
+            setMenu({selectedBattle: 'Battle 2'});
+            
+        }}>
+                SET MY STATE with PET 2
+        </button> 
 
 
             <Card>
