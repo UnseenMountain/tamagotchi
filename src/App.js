@@ -9,6 +9,12 @@ import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
+import PetMenu from './components/PetMenu/PetMenu.js';
+// import Menu from './components/Menu/menu.js';
+
+
+
+>>>>>>> f7d28fa27e4657a7d9ffb9a2c8eb88cfc76e6a1e
 
 
 function App() {
@@ -23,11 +29,16 @@ function App() {
         </Security> */}
       <div>
         <Nav />
+
         <Menu>
           <Route path="/login" component={LoginPage} />
+
+        {/* <Menu> */}
+          <PetMenu>
           <Route exact path="/" component={Game} />
           <Route exact path="/Game" component={Game}></Route>
-        </Menu>
+          </PetMenu>
+        {/* </Menu> */}
         <Footer />
       </div>
     </Router> 
