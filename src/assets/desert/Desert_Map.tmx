@@ -4,34 +4,34 @@
   <export target="Desert_Map.tmx" format="tmx"/>
  </editorsettings>
  <tileset firstgid="1" name="rocks" tilewidth="32" tileheight="32" tilecount="112" columns="7">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/rocks.png" width="224" height="512"/>
+  <image source="./tilesheets/rocks.png" width="224" height="512"/>
  </tileset>
  <tileset firstgid="113" name="red_cave" tilewidth="32" tileheight="32" tilecount="190" columns="10">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/red_cave.png" width="320" height="608"/>
+  <image source="./tilesheets/red_cave.png" width="320" height="608"/>
  </tileset>
  <tileset firstgid="303" name="Outside_A2" tilewidth="32" tileheight="32" tilecount="432" columns="24">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Parallax_Resource_Pack/sample_project/img/tilesets/Outside_A2.png" width="768" height="576"/>
+  <image source="./tilesheets/Outside_A2.png" width="768" height="576"/>
  </tileset>
  <tileset firstgid="735" name="sekihi01" tilewidth="32" tileheight="32" tilecount="48" columns="6">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/sekihi01.png" width="208" height="256"/>
+  <image source="./tilesheets/sekihi01.png" width="208" height="256"/>
  </tileset>
  <tileset firstgid="783" name="planks" tilewidth="32" tileheight="32" tilecount="16" columns="4">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/planks.png" width="128" height="128"/>
+  <image source="./tilesheets/planks.png" width="128" height="128"/>
  </tileset>
  <tileset firstgid="799" name="bones" tilewidth="32" tileheight="32" tilecount="20" columns="5">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/bones.png" width="160" height="128"/>
+  <image source="./tilesheets/bones.png" width="160" height="128"/>
  </tileset>
  <tileset firstgid="819" name="miscshop_bridge" tilewidth="32" tileheight="32" tilecount="256" columns="16">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/miscshop_bridge.png" width="512" height="512"/>
+  <image source="./tilesheets/miscshop_bridge.png" width="512" height="512"/>
  </tileset>
  <tileset firstgid="1075" name="Outside_A2" tilewidth="32" tileheight="32" tilecount="432" columns="24">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Magic_and_SFPack/Sample_Project/img/tilesets/Outside_A2.png" width="768" height="576"/>
+  <image source="./tilesheets/Outside_A2.png" width="768" height="576"/>
  </tileset>
  <tileset firstgid="1507" name="rocks" tilewidth="32" tileheight="32" tilecount="112" columns="7">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/rocks.png" width="224" height="512"/>
+  <image source="./tilesheets/rocks.png" width="224" height="512"/>
  </tileset>
  <tileset firstgid="1619" name="sekihi01" tilewidth="32" tileheight="32" tilecount="48" columns="6">
-  <image source="../../../../Volumes/The Billky Way/Non-HDD Apps/RPGBoss/Downloaded_Resources/Tilesets/sekihi01.png" width="208" height="256"/>
+  <image source="./tilesheets/sekihi01.png" width="208" height="256"/>
  </tileset>
  <layer id="1" name="Tile Floor 1" width="60" height="35">
   <data encoding="csv">
