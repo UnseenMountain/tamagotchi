@@ -126,6 +126,14 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
             miscTiles, 
             bonesTiles, 
             sekihiTiles], 0, 0);
+        let collider6 = map.createStaticLayer('Tile Layer 6', [
+            rocksTiles, 
+            desertTiles, 
+            caveTiles, 
+            plankTiles, 
+            miscTiles, 
+            bonesTiles, 
+            sekihiTiles], 0, 0);
         
         // make all tiles in obstacles collidable
         collider1.setCollisionByExclusion([-1]);
@@ -133,6 +141,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         collider3.setCollisionByExclusion([-1]);
         collider4.setCollisionByExclusion([-1]);
         collider5.setCollisionByExclusion([-1]);
+        collider6.setCollisionByExclusion([-1]);
         
                                        /*  
         ___________________________¶¶¶¶¶¶
