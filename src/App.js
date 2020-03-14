@@ -37,6 +37,9 @@ function App() {
           </PetMenu>
         {/* </Menu> */}
         </Menu>
+        <div id="phaser-box">
+          <div id="phaser"></div>
+        </div>
         <Footer />
       </div>
     </Router> 
