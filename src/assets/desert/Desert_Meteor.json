@@ -322,7 +322,7 @@
         {
          "columns":24,
          "firstgid":1075,
-         "image":"..\/..\/..\/..\/Volumes\/The Billky Way\/Non-HDD Apps\/RPGBoss\/Downloaded_Resources\/Magic_and_SFPack\/Sample_Project\/img\/tilesets\/Outside_A2.png",
+         "image":"./tilesheets/Outside_A2.png",
          "imageheight":576,
          "imagewidth":768,
          "margin":0,
