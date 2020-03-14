@@ -26,9 +26,8 @@ function App() {
         </Security> */}
       <div>
         <Nav />
-
+        <Route path="/login" component={LoginPage} />
         <Menu>
-          <Route path="/login" component={LoginPage} />
 
         {/* <Menu> */}
           <PetMenu>
