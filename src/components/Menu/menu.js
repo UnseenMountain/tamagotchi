@@ -23,9 +23,9 @@ function Menu() {
         </button> 
 
 
-            <Card>
+            {/* <Card>
                 <Card.Img src="https://wallpaperplay.com/walls/full/2/9/d/123834.jpg" alt="Card image" />
-                <Card.ImgOverlay>
+                <Card.ImgOverlay> */}
 
 
 
@@ -90,8 +90,8 @@ function Menu() {
                         </CardDeck>
                     </Card.Text> */}
 
-                </Card.ImgOverlay>
-            </Card>
+                {/* </Card.ImgOverlay>
+            </Card> */}
 
         </div>
     );

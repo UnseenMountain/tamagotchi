@@ -37,11 +37,11 @@ function PetMenu() {
         </button>
 
 
-            <Card>
+            {/* <Card>
                 <Card.Img src="https://wallpaperplay.com/walls/full/2/9/d/123834.jpg" alt="Card image" />
                 <Card.ImgOverlay>
                     
-                    {/* <Container>
+                    <Container>
                         <CardDeck>
                             <Card>
 
@@ -106,9 +106,9 @@ function PetMenu() {
 
                             </Card>
                         </CardDeck>
-                    </Container> */}
+                    </Container>
                 </Card.ImgOverlay>
-            </Card>
+            </Card> */}
         </div>
     )
 }
