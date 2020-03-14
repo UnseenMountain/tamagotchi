@@ -1,8 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Phaser from "phaser";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import WorldScene from "./phaser/world";
+
+export const config = {
+    type: Phaser.AUTO,
+    parent: 'phaser',
+    width: 320,
+    height: 240,
+    zoom: 2,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 },
+            debug: false // set to true to view zones
+        }
+    },
+    scene: WorldScene
+  };
+  
+const game = new Phaser.Game(config);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
