@@ -13,13 +13,13 @@ import charSprites from '../assets/RPG_assets.png';
 
 //console.log("tileMap:: ", tileMap);
 
-let WorldScene = new Phaser.Class({
+let DesertScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
     initialize:
-    function WorldScene ()
+    function DesertScene ()
     {
-        Phaser.Scene.call(this, { key: 'WorldScene' });
+        Phaser.Scene.call(this, { key: 'DesertScene' });
     },
     preload: function ()
     {
@@ -301,4 +301,4 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
     
 });
 
-export default WorldScene;
+export default DesertScene;
