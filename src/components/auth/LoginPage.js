@@ -1,6 +1,8 @@
 import React from 'react';
 import OktaSignIn from '@okta/okta-signin-widget';
 import Backbone from 'backbone';
+import Modal from "../Modal/index.js";
+import "./style.css"
 
 export default class LoginPage extends React.Component{
   constructor(){
@@ -56,18 +58,36 @@ export default class LoginPage extends React.Component{
     });
   }
 
+
+
+  modalOpen() {
+    this.setState({ modal: true });
+  }
+
+  modalClose() {
+    this.setState({
+      user: "",
+      modal: false
+    });
+  }
+
   render(){
     return(
       <div>
+        <a href="javascript:;" onClick={e => this.modalOpen(e)}>
+          Click here to Sign Up or Log In
+        </a>
+        <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
+        {this.state.user ? null : (
+          <div ref={(div) => {this.loginContainer = div; }} />
+        )}
+        </Modal>
         {this.state.user ? (
           <div className="container">
             <div>Welcome, {this.state.user}!</div>
             <button onClick={this.logout}>Logout</button>
           </div>
         ) : null}
-        {this.state.user ? null : (
-          <div ref={(div) => {this.loginContainer = div; }} />
-        )}
       </div>
     );
   }
