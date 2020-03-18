@@ -38,7 +38,10 @@ export default class LoginPage extends React.Component{
     Backbone.history.stop();
     this.widget.renderEl({el:this.loginContainer},
       (response) => {
-        this.setState({user: response.claims.email});
+       if (response.status !== "ACTIVATION_EMAIL_SENT")   {
+          // console.log(response);
+          this.setState({user: response.claims.email});
+       }
       },
       (err) => {
         console.log(err);
