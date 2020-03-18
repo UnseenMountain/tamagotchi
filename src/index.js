@@ -4,7 +4,8 @@ import Phaser from "phaser";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import WorldScene from "./phaser/world";
+import DesertScene from "./phaser/desert";
+import ForestScene from "./phaser/forest";
 
 export const config = {
     type: Phaser.AUTO,
@@ -19,7 +20,7 @@ export const config = {
             debug: false // set to true to view zones
         }
     },
-    scene: WorldScene
+    scene: ForestScene
   };
   
 const game = new Phaser.Game(config);
