@@ -2,6 +2,7 @@ import React from "react";
 
 import { Navbar } from 'react-bootstrap';
 import Link from '../auth/LoginPage'
+import "./style.css"
 
 function Nav() {
 
@@ -9,8 +10,8 @@ function Nav() {
         <div>
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home">Tamagotchi simulator</Navbar.Brand>
+                <ul><Link to="login">Login</Link></ul>
             </Navbar>
-            <li><Link to="login">Login</Link></li>
         </div>
     )
 }
