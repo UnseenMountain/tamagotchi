@@ -4,6 +4,9 @@ import Phaser from "phaser";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+//Put this and config in own file; use switch statement
+//to change between pages (???)
 import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
 
