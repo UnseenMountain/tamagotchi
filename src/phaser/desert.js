@@ -61,7 +61,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // create the map
         let map = this.make.tilemap({ key: 'map' });
         
-        // Map tilesets; Param1: Name of the tilemap in tiled; Param2: ame defined in tilemap load
+        // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: ame defined in tilemap load
         let rocksTiles = map.addTilesetImage('rocks', 'rocks');
         let desertTiles = map.addTilesetImage('Outside_A2', 'desert');
         let caveTiles = map.addTilesetImage('red_cave', 'cave');
