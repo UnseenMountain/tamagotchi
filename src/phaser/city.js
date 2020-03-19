@@ -243,6 +243,18 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
             bikeTiles, 
             grimeTiles, 
             charsTiles], 0, 0);
+        let overtileTwo = map.createStaticLayer('Overtile2', [
+            bldgOneTiles, 
+            bldgTwoTiles, 
+            bldgThreeTiles, 
+            bldgFourTiles, 
+            bldgFiveTiles, 
+            militaryBldgsTiles, 
+            slumsTiles, 
+            dumpTiles, 
+            bikeTiles, 
+            grimeTiles, 
+            charsTiles], 0, 0);
        //OBSTACLES
         let collider = map.createStaticLayer('Obstacles', [
             bldgOneTiles, 
@@ -260,6 +272,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // make all tiles in obstacles collidable
         collider.setCollisionByExclusion([-1]);
         overtile.setDepth(1);
+        overtileTwo.setDepth(1);
         
                                        /*  
         ___________________________¶¶¶¶¶¶
