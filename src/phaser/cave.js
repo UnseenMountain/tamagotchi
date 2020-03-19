@@ -1,24 +1,23 @@
 //DESERT MAP && MOVEMENT CODE
 
 import Phaser from "phaser";
-import tileMap from '../assets/forest/Forest.json';
-import hiDefGraves from '../assets/forest/tilesheets/d6qnbs4-c4ff2415-2303-4298-98c8-21f24187b9eb.png';
-import landSprites from '../assets/forest/tilesheets/d9xkdpm-a3f22a0a-77e9-4aa5-999c-53bab01d0fa4.png';
-import gnarlyTrees from '../assets/forest/tilesheets/dapf6nc-562c87b7-1de8-45c2-979f-18e7aa8b98ad.png';
-import gravesSprites from '../assets/forest/tilesheets/graves-shadow_1.png';
-import treesOne from '../assets/forest/tilesheets/mv_trees_by_schwarzenacht-dazcdmq-1.png';
-import treesTwo from '../assets/forest/tilesheets/pandamaru_mv_nature1_by_schwarzenacht-d9k7n23.png';
-import greenerySprites from '../assets/forest/tilesheets/rpg_maker__grass__flowers_and_windows_tileset_by_xxjapozeroxx-dbpxkvy.png';
+import tileMap from '../assets/cave/Cave.json';
+import loDefCave from '../assets/cave/tilesheets/All.png';
+import caveRunner from '../assets/cave/tilesheets/cave_tileset.png';
+import hiDefCave from '../assets/cave/tilesheets/cave2.png';
+import crystals from '../assets/cave/tilesheets/crystals.png';
+import loDefFloor from '../assets/cave/tilesheets/TileA5.png';
+import water from '../assets/cave/tilesheets/wateranimate2.png';
 import charSprites from '../assets/RPG_assets.png';
 //console.log("tileMap:: ", tileMap);
 
-let ForestScene = new Phaser.Class({
+let CaveScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
     initialize:
-    function ForestScene ()
+    function CaveScene ()
     {
-        Phaser.Scene.call(this, { key: 'ForestScene' });
+        Phaser.Scene.call(this, { key: 'CaveScene' });
     },
     preload: function ()
     {
@@ -43,15 +42,14 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // map in json format
         this.load.tilemapTiledJSON('map', tileMap);
         // Load the tile maps & give them identifiers
-        this.load.image('land', landSprites);
-        this.load.image('greenery', greenerySprites);
-        this.load.image('treesone', treesOne);
-        this.load.image('treestwo', treesTwo);
-        this.load.image('treesthree', gnarlyTrees);
-        this.load.image('gravesone', hiDefGraves);
-        this.load.image('gravestwo', gravesSprites);
+        this.load.image('lowDefCave', loDefCave);
+        this.load.image('lowDefFloor', loDefFloor);
+        this.load.image('highDefCave', hiDefCave);
+        this.load.image('crystals', crystals);
+        this.load.image('caveRunner', caveRunner);
+        this.load.image('water', water);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our two characters
+        // our character
         this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
         //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
     },
@@ -60,102 +58,66 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // create the map
         let map = this.make.tilemap({ key: 'map' });
         
-        // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: ame defined in tilemap load
-        let landTiles = map.addTilesetImage('d9xkdpm-a3f22a0a-77e9-4aa5-999c-53bab01d0fa4', 'land');
-        let greeneryTiles = map.addTilesetImage('rpg_maker__grass__flowers_and_windows_tileset_by_xxjapozeroxx-dbpxkvy', 'greenery');
-        let treesOneTiles = map.addTilesetImage('mv_trees_by_schwarzenacht-dazcdmq-1', 'treesone');
-        let treesTwoTiles = map.addTilesetImage('pandamaru_mv_nature1_by_schwarzenacht-d9k7n23', 'treestwo');
-        let treesThreeTiles = map.addTilesetImage('dapf6nc-562c87b7-1de8-45c2-979f-18e7aa8b98ad', 'treesthree');
-        let gravesOneTiles = map.addTilesetImage('d6qnbs4-c4ff2415-2303-4298-98c8-21f24187b9eb', 'gravesone');
-        let gravesTwoTiles = map.addTilesetImage('graves-shadow_1', 'gravestwo');
+        // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: are defined in tilemap load
+        let lowDefCaveTiles = map.addTilesetImage('Preston', 'lowDefCave');
+        let lowDefFloorTiles = map.addTilesetImage('TileA5', 'lowDefFloor');
+        let highDefCaveTiles = map.addTilesetImage('cave2', 'highDefCave');
+        let crystalsTiles = map.addTilesetImage('crystals', 'crystals');
+        let caveRunnerTiles = map.addTilesetImage('cave_tileset', 'caveRunner');
+        let waterTiles = map.addTilesetImage('wateranimate2', 'water');
         // console.log("Phaser.Cache:: ", Phaser.Cache);
         // console.log("map:: ", map);
         
         // creating the layers
         //FLOOR LAYER 1 -- Param1: Name of the layer in JSON Object; Param2: map names used in that layer
-        let floor1 = map.createStaticLayer('Tile Layer 3', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor2 = map.createStaticLayer('Tile Layer 7', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor3 = map.createStaticLayer('Tile Layer 1', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
+        let floor1 = map.createStaticLayer('Tile Layer 1', [
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
+        let floor2 = map.createStaticLayer('Tile Layer 2', [
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
+        let floor3 = map.createStaticLayer('Tile Layer 3', [
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
         let floor4 = map.createStaticLayer('Tile Layer 4', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor5 = map.createStaticLayer('Tile Layer 5', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor6 = map.createStaticLayer('Tile Layer 2', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor7 = map.createStaticLayer('Tile Layer 9', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor8 = map.createStaticLayer('Tile Layer 6', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
-        let floor9 = map.createStaticLayer('Tile Layer 8', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
+        //OVERTILE
+        let overtile = map.createStaticLayer('Overtile', [
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
+       //OBSTACLES
         let collider = map.createStaticLayer('Obstacles', [
-            landTiles, 
-            greeneryTiles, 
-            treesOneTiles, 
-            treesTwoTiles, 
-            treesThreeTiles, 
-            gravesOneTiles, 
-            gravesTwoTiles], 0, 0);
+            lowDefCaveTiles, 
+            lowDefFloorTiles, 
+            highDefCaveTiles, 
+            crystalsTiles, 
+            caveRunnerTiles, 
+            waterTiles], 0, 0);
         
         // make all tiles in obstacles collidable
         collider.setCollisionByExclusion([-1]);
+        overtile.setDepth(1);
         
                                        /*  
         ___________________________¶¶¶¶¶¶
@@ -216,7 +178,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         });        
 
         // our player sprite created through the physics system (params measured in pixels)
-        this.player = this.physics.add.sprite(550, 680, 'player', 15);
+        this.player = this.physics.add.sprite(180, 220, 'player', 15);
         
         // don't go out of the map
         this.physics.world.bounds.width = map.widthInPixels;
@@ -311,4 +273,4 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
     
 });
 
-export default ForestScene;
+export default CaveScene;

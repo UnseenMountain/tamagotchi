@@ -9,6 +9,8 @@ import * as serviceWorker from './serviceWorker';
 //to change between pages (???)
 import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
+import CaveScene from "./phaser/cave";
+import CityScene from "./phaser/city";
 
 export const config = {
     type: Phaser.AUTO,
@@ -23,7 +25,7 @@ export const config = {
             debug: false // set to true to view zones
         }
     },
-    scene: ForestScene
+    scene: CityScene
   };
   
 const game = new Phaser.Game(config);
