@@ -4,7 +4,13 @@ import Phaser from "phaser";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import WorldScene from "./phaser/world";
+
+//Put this and config in own file; use switch statement
+//to change between pages (???)
+import DesertScene from "./phaser/desert";
+import ForestScene from "./phaser/forest";
+import CaveScene from "./phaser/cave";
+import CityScene from "./phaser/city";
 
 export const config = {
     type: Phaser.AUTO,
@@ -19,7 +25,7 @@ export const config = {
             debug: false // set to true to view zones
         }
     },
-    scene: WorldScene
+    scene: CityScene
   };
   
 const game = new Phaser.Game(config);
