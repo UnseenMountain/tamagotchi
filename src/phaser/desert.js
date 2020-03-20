@@ -226,7 +226,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         
         // where the enemies will be ~~ SOMEWHAT RANDOMIZED; DOESN'T CHANGE
         this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
-        for(let i = 0; i < 30; i++) {
+        for(let i = 0; i < 40; i++) {
             let x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
             let y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
             // parameters are x, y, width, height
@@ -247,6 +247,9 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // start battle 
         //PUT LUKE'S BATTLE CODE HERE
         //&& CHANGE THE STATE TO BATTLE; SHOW THE BATTLE SCREEN 
+        this.input.stopPropagation();
+        // start battle 
+        this.scene.switch('BattleScene'); 
     },
     update: function (time, delta)
     {

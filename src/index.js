@@ -5,8 +5,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+//Importing Scenes
+import BootScene from "./phaser/boot";
+import BattleScene from "./phaser/battle";
+import UIScene from "./phaser/ui";
+//WORLDS -- OPTIONS
 //Put this and config in own file; use switch statement
 //to change between pages (???)
+//OR
+//Make a function here to change the state; if player goes 
+//into world WorldScene = DesertScene or whatever world
 import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
 import CaveScene from "./phaser/cave";
@@ -15,9 +23,9 @@ import CityScene from "./phaser/city";
 export const config = {
     type: Phaser.AUTO,
     parent: 'phaser',
-    width: 320,
-    height: 240,
-    zoom: 2,
+    width: 750,
+    height: 600,
+    zoom: 1,
     physics: {
         default: 'arcade',
         arcade: {
@@ -25,7 +33,12 @@ export const config = {
             debug: false // set to true to view zones
         }
     },
-    scene: CityScene
+    scene:   [
+        BootScene, 
+        DesertScene,
+        BattleScene,
+        UIScene
+      ]
   };
   
 const game = new Phaser.Game(config);

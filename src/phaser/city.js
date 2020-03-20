@@ -374,6 +374,9 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // start battle 
         //PUT LUKE'S BATTLE CODE HERE
         //&& CHANGE THE STATE TO BATTLE; SHOW THE BATTLE SCREEN 
+        this.input.stopPropagation();
+        // start battle 
+        this.scene.switch('BattleScene'); 
     },
     update: function (time, delta)
     {
