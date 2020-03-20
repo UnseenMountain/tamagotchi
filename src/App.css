@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+#phaser-box{
+  background-image: url("https://wallpaperplay.com/walls/full/2/9/d/123834.jpg");
+  
+  background-size: cover;
+}

@@ -1,45 +1,17 @@
-import React, { useState } from 'react';
-import { Container, Card, CardDeck, ButtonGroup, Button, ButtonToolbar, Col, Image } from 'react-bootstrap'
-import ReactDOM from 'react-dom';
+// import React, { useState } from 'react';
+// import { Container, Card, CardDeck, ButtonGroup, Button, ButtonToolbar, Col, Image } from 'react-bootstrap'
+// import ReactDOM from 'react-dom';
 
 
-function PetMenu() {
-    const [menu, setPetMenu, setselectedPet] = useState({ selectedPet: null });
-    console.log(menu)
-    return (
-        <div>
-            <button onClick={() => {
-                setPetMenu({ selectedPet: 'pet 1' });
-                    setselectedPet({})
-            }}>
-                SET MY STATE with PET 1
-        </button>
+// function PetMenu() {
+    
+//     return (
+        // <div>
+            
 
-            <button onClick={() => {
-                setPetMenu({ selectedPet: 'pet 2' });
-
-            }}>
-                SET MY STATE with PET 2
-        </button>
-
-            <button onClick={() => {
-                setPetMenu({ selectedPet: 'pet 3' });
-
-            }}>
-                SET MY STATE with PET 3
-        </button>
-
-            <button onClick={() => {
-                setPetMenu({ selectedPet: 'pet 4' });
-
-            }}>
-                SET MY STATE with PET 4
-        </button>
-
-
-            <Card>
+            {/* <Card>
                 <Card.Img src="https://wallpaperplay.com/walls/full/2/9/d/123834.jpg" alt="Card image" />
-                <Card.ImgOverlay>
+                <Card.ImgOverlay> */}
                     
                     {/* <Container>
                         <CardDeck>
@@ -107,17 +79,11 @@ function PetMenu() {
                             </Card>
                         </CardDeck>
                     </Container> */}
-                </Card.ImgOverlay>
+                {/* </Card.ImgOverlay>
             </Card>
-        </div>
-    )
-}
+        </div> */}
+//     )
+// }
 
-export default PetMenu
+// export default PetMenu
 
-
-
-
-// const Menu = ({ children }) => {
-
-//                    
