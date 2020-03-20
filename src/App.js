@@ -9,8 +9,7 @@ import Footer from './components/Footer/footer.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-// import PetMenu from './components/PetMenu/PetMenu.js';
-// import Menu from './components/Menu/menu.js';
+
 
 
 
