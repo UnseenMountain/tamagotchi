@@ -3,6 +3,8 @@ import PlayerCharacter from "./prefabs/playercharacter";
 import Enemy from "./prefabs/enemy";
 import desertBG from '../assets/images/battle_backgrounds/desert.jpg';
 
+//Make a dummy object this pulls info to [FROM DB] and displays specific battle screen/characters, etc
+
 // console.log("tileMap:: ", tileMap);
 // console.log("tileSprites:: ", tileSprites);
 
