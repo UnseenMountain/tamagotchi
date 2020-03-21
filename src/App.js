@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Game from "./pages/Game.js"
+
 import Nav from './components/Nav/Nav.js';
 import Footer from './components/Footer/footer.js';
 // import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-
+import Save from './components/Save/saveMenu.js'
 
 
 
@@ -26,19 +26,15 @@ function App() {
       <div>
         <Nav />
         <Route path="/login" component={LoginPage} />
-        
-
-        
-          
-          <Route exact path="/" component={Game} />
-          <Route exact path="/Game" component={Game}></Route>
-          
+       
+          {/* <Save/> */}
+        </div>
         
         <div id="phaser-box">
           <div id="phaser"></div>
         </div>
         <Footer />
-      </div>
+      
     </Router> 
   );
 }
