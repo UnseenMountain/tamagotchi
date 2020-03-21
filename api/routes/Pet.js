@@ -1,16 +1,16 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const router = require("express").Router();
+const petController = require("../../controllers/petController");
 
+// Matches with "/api/books"
+router.route("/pet")
+    .get(petController.findAll)
+    .post(petController.create);
 
-const petSchema = new Schema({
-    pet: "",
-    health: 5,
-    hatched: false,
-    level: 1,
-    attackPower: 3,
-    multiplayer: 1.5
-})
+// Matches with "/api/books/:id"
+router
+    .route("/:id")
+    .get(petController.findById)
+    .put(petController.update)
+//   .delete(booksController.remove);
 
-const Pet = mongoose.model("Pet", petSchema)
-
-module.exports = Pet;
+module.exports = router;

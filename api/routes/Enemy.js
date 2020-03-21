@@ -1,15 +1,16 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const router = require("express").Router();
+const enemyController = require("../../controllers/enemyController");
 
+// Matches with "/api/books"
+router.route("/enemy")
+    .get(enemyController.findAll)
+    .post(enemyController.create);
 
-const enemySchema = new Schema({
-    name: "",
-    health: 2,
-    level: 1,
-    attackPower: 2,
-    EXP: 5
-})
+// Matches with "/api/books/:id"
+router
+    .route("/:id")
+    .get(enemyController.findById)
+    .put(enemyController.update)
+//   .delete(booksController.remove);
 
-const Enemy = mongoose.model("Enemy", enemySchema)
-
-module.exports = Enemy;
+module.exports = router;
