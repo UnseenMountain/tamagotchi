@@ -5,12 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Game from "./pages/Game.js"
 import Nav from './components/Nav/Nav.js';
 import Footer from './components/Footer/footer.js';
-import Menu from './components/Menu/menu.js';
+// import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-import PetMenu from './components/PetMenu/PetMenu.js';
-// import Menu from './components/Menu/menu.js';
+
 
 
 
@@ -27,15 +26,14 @@ function App() {
       <div>
         <Nav />
         <Route path="/login" component={LoginPage} />
-        <Menu>
+        
 
-        {/* <Menu> */}
-          <PetMenu>
+        
+          
           <Route exact path="/" component={Game} />
           <Route exact path="/Game" component={Game}></Route>
-          </PetMenu>
-        {/* </Menu> */}
-        </Menu>
+          
+        
         <div id="phaser-box">
           <div id="phaser"></div>
         </div>

@@ -5,27 +5,14 @@ import { Card, Button, CardDeck, ButtonGroup } from 'react-bootstrap';
 
 
 function Menu() {
-    const [menu, setMenu] = useState({ selectedBattle: null });
-    console.log(menu)
+    
     return (
-        <div>
-            <button onClick={() => {
-            setMenu({selectedBattle: 'Battle 1'});
-            
-        }}>
-                SET MY STATE with Battle
-        </button> 
-        <button onClick={() => {
-            setMenu({selectedBattle: 'Battle 2'});
-            
-        }}>
-                SET MY STATE with PET 2
-        </button> 
+      
 
 
-            <Card>
-                <Card.Img src="https://wallpaperplay.com/walls/full/2/9/d/123834.jpg" alt="Card image" />
-                <Card.ImgOverlay>
+            // <Card>
+            //     <Card.Img src="https://wallpaperplay.com/walls/full/2/9/d/123834.jpg" alt="Card image" />
+            //     <Card.ImgOverlay>
 
 
 
@@ -90,10 +77,10 @@ function Menu() {
                         </CardDeck>
                     </Card.Text> */}
 
-                </Card.ImgOverlay>
-            </Card>
+        //         </Card.ImgOverlay>
+        //     </Card>
 
-        </div>
+        // </div>
     );
 }
 
