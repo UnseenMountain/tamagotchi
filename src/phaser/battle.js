@@ -119,7 +119,7 @@ let BattleScene = new Phaser.Class({
         // sleep the UI
         this.scene.sleep('UIScene');
         // return to WorldScene and sleep current BattleScene
-        this.scene.switch('DesertScene');
+        this.scene.switch('WorldScene');
     }
 });
 

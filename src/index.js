@@ -15,6 +15,7 @@ import UIScene from "./phaser/ui";
 //OR
 //Make a function here to change the state; if player goes 
 //into world WorldScene = DesertScene or whatever world
+import WorldScene from "./phaser/worldmap";
 import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
 import CaveScene from "./phaser/cave";
@@ -35,7 +36,7 @@ export const config = {
     },
     scene:   [
         BootScene, 
-        DesertScene,
+        WorldScene,
         BattleScene,
         UIScene
       ]
