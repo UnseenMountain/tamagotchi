@@ -1,8 +1,9 @@
 import Phaser from "phaser";
 import charSprites from '../assets/RPG_assets.png';
-import dragonB from '../assets/creatures/possiblecaptures/AutomatonBase.png';
-import dragonO from '../assets/creatures/possiblecaptures/Toxic Root B.png';
+import dragonB from '../assets/creatures/capturecreatures/AutomatonBase.png';
+import dragonO from '../assets/creatures/capturecreatures/ToxicRoot.png';
 import DesertScene from "./desert";
+import WorldScene from "./worldmap";
 
 let BootScene = new Phaser.Class({
 
@@ -23,7 +24,7 @@ let BootScene = new Phaser.Class({
     {
         // start the WorldScene
         // console.log("WorldScene:: ", WorldScene);
-        this.scene.start("DesertScene");
+        this.scene.start("WorldScene");
     }
 });
 
