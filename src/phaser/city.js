@@ -1,7 +1,7 @@
-//DESERT MAP && MOVEMENT CODE
-
+//Phaser Dependency
 import Phaser from "phaser";
-import tileMap from '../assets/city/City.json';
+
+//Tile dependencies
 import bldgOne from '../assets/city/tilesheets/bldg.png';
 import bldgTwo from '../assets/city/tilesheets/CyberTileA4.png';
 import bldgThree from '../assets/city/tilesheets/industrial.png';
@@ -13,7 +13,6 @@ import dump from '../assets/city/tilesheets/wreckage.png';
 import bike from '../assets/city/tilesheets/bike.png';
 import grime from '../assets/city/tilesheets/blood_wall02.png';
 import chars from '../assets/city/tilesheets/chars_city.png';
-import charSprites from '../assets/RPG_assets.png';
 //console.log("tileMap:: ", tileMap);
 
 let CityScene = new Phaser.Class({
@@ -26,7 +25,7 @@ let CityScene = new Phaser.Class({
     },
     preload: function ()
     {
-        console.log("I'M RUNNING");
+      
 /*                                                ******* _
                                                 *---******* *
                                 ~             *-----*******  *
@@ -46,7 +45,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 
 
         // map in json format
-        this.load.tilemapTiledJSON('map', tileMap);
+        this.load.tilemapTiledJSON('citymap', "cityTileMap");
         // Load the tile maps & give them identifiers
         this.load.image('bldgOne', bldgOne);
         this.load.image('bldgTwo', bldgTwo);
@@ -60,14 +59,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.load.image('grime', grime);
         this.load.image('chars', chars);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our character
-        this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
-        //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
+
+        //What monsters to load
+        // this.load.image("dragonblue",dragonB);
+        // this.load.image("dragonorrange", dragonO);
     },
     create: function ()
     {
         // create the map
-        let map = this.make.tilemap({ key: 'map' });
+        let map = this.make.tilemap({ key: 'citymap' });
         
         // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: are defined in tilemap load
         let bldgOneTiles = map.addTilesetImage('bldg', 'bldgOne');

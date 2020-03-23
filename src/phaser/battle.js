@@ -107,7 +107,7 @@ let BattleScene = new Phaser.Class({
             this.units[this.index].attack(this.enemies[target]);              
         }
         // next turn in 3 seconds
-        this.time.addEvent({ delay: 3000, callback: this.nextTurn, callbackScope: this });        
+        this.time.addEvent({ delay: 2500, callback: this.nextTurn, callbackScope: this });        
     },    
     endBattle: function() {       
         // clear state, remove sprites
@@ -121,7 +121,8 @@ let BattleScene = new Phaser.Class({
         // sleep the UI
         this.scene.sleep('UIScene');
         // return to WorldScene and sleep current BattleScene
-        this.scene.switch('WorldScene');
+        this.scene.switch('WorldScene'); //This just works, even if not worldscene. Don't know why
+        this.scene.stop('BattleScene');
     }
 });
 

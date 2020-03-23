@@ -1,5 +1,7 @@
+//React dependency
 import React from 'react';
 import ReactDOM from 'react-dom';
+//Phaser dependency
 import Phaser from "phaser";
 import './index.css';
 import App from './App';
@@ -9,19 +11,15 @@ import * as serviceWorker from './serviceWorker';
 import BootScene from "./phaser/boot";
 import BattleScene from "./phaser/battle";
 import UIScene from "./phaser/ui";
-//WORLDS -- OPTIONS
-//Put this and config in own file; use switch statement
-//to change between pages (???)
-//OR
-//Make a function here to change the state; if player goes 
-//into world WorldScene = DesertScene or whatever world
+//Map Scenes
 import WorldScene from "./phaser/worldmap";
 import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
 import CaveScene from "./phaser/cave";
 import CityScene from "./phaser/city";
 
-export const config = {
+//Create config~
+const config = {
     type: Phaser.AUTO,
     parent: 'phaser',
     width: 750,
@@ -37,13 +35,18 @@ export const config = {
     scene:   [
         BootScene, 
         WorldScene,
+        DesertScene,
+        ForestScene,
+        CaveScene,
+        CityScene,
         BattleScene,
         UIScene
       ]
   };
-  
+ //~ and declate it to Phaser 
 const game = new Phaser.Game(config);
 
+//Render the DOM
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
