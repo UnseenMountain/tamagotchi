@@ -9,7 +9,7 @@ import Footer from './components/Footer/footer.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-import Save from './components/Save/saveMenu.js'
+import SaveMenu from './components/Save/SaveMenu.js'
 
 
 
@@ -29,7 +29,7 @@ function App() {
        
           {/* <Save/> */}
         </div>
-        
+        <SaveMenu/>
         <div id="phaser-box">
           <div id="phaser"></div>
         </div>
