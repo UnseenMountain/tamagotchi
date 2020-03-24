@@ -2,7 +2,10 @@ import React from 'react';
 import OktaSignIn from '@okta/okta-signin-widget';
 import Backbone from 'backbone';
 import Modal from "../Modal/index.js";
-import "./style.css"
+import "./style.css";
+import { Button } from "react-bootstrap";
+
+
 
 export default class LoginPage extends React.Component{
   constructor(){
@@ -75,7 +78,8 @@ export default class LoginPage extends React.Component{
     return(
       <div>
         <a href="javascript:;" onClick={e => this.modalOpen(e)}>
-          Click here to Sign Up or Log In
+        <Button variant="primary">Click here to Sign Up or Log In</Button>
+          
         </a>
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
         {this.state.user ? null : (
