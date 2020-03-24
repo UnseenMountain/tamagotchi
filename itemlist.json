@@ -1,327 +1,388 @@
 {
     "allPossibleItems" : {
         "wood-sword" : {
+            "name" : "Wood Sword",
             "power" : 10,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "iron-sword" : {
+            "name" : "Iron Sword",
             "power" : 20,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "steel-sword" : {
+            "name" : "Steel Sword",
             "power" : 30,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "diamond-sword" : {
+            "name" : "Diamond Sword",
             "power" : 40,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "knight-sword" : {
+            "name" : "Knight Sword",
             "power" : 50,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "wood-buckler" : {
-            "power" : 10,
+            "name" : "Wood Buckler",
+            "defense" : 10,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "iron-buckler" : {
+            "name": "Iron Buckler",
             "defense" : 20,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "steel-buckler" : {
+            "name" : "Steel Buckler",
             "defense" : 30,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "diamond-buckler" : {
+            "name" :"Diamond Buckler",
             "defense" : 40,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "knight-buckler" : {
+            "name" :"Knight Buckler",
             "defense" : 50,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "wood-helmet" : {
+            "name" : "Wood Helmet",
             "power" : 8,
             "agility" : 2,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "iron-helmet" : {
+            "name" :"Iron Helmet",
             "defense" : 16,
             "agility" : 4,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "steel-helmet" : {
+            "name" :"Steel Helmet",
             "defense" : 24,
             "agility" : 6,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "diamond-helmet" : {
+            "name" :"Diamond Helmet",
             "defense" : 33,
             "agility" : 8,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "knight-helmet" : {
+            "name" :"Knight Helmet",
             "defense" : 41,
             "agility" : 10,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "wood-boots" : {
-            "power" : 6,
+            "name" : "Wood Boots",
+            "defense" : 6,
             "agility" : 4,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "iron-boots" : {
+            "name" :"Iron Boots",
             "defense" : 14,
             "agility" : 6,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "steel-boots" : {
+            "name" :"Steel Boots",
             "defense" : 21,
             "agility" : 9,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "diamond-boots" : {
+            "name" :"Diamond Boots",
             "defense" : 29,
             "agility" : 13,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "knight-boots" : {
+            "name" :"Knight Boots",
             "defense" : 36,
             "agility" : 16,
             "equippable" : true,
-            "equip-target" : "player"
+            "equiptarget" : "player"
         },
         "green-bracelet" : {
-            "poison-immune" : true,
+            "name" : "Gree Bracelet",
+            "effect" : ["poison-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "black-bracelet" : {
-            "blind-immune" : true,
+            "name" : "Black Bracelet",
+            "effect" : ["blind-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "purple-bracelet" : {
-            "hex-immune" : true,
+            "name" : "Purple Bracelet",
+            "effect" : ["hex-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "red-bracelet" : {
-            "weak-immune" : true,
+            "name" : "Red Bracelet",
+            "effect" : ["weak-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "yellow-bracelet" : {
-            "shock-immune" : true,
+            "name" : "Yellow Bracelet",
+            "effect" : ["shock-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "pink-bracelet" : {
-            "blind-immune" : true,
-            "shock-immune" : true,
-            "hex-immune" : true,
-            "weak-immune" : true,
-            "poison-immune" : true,
+            "name" : "Pink Bracelet",
+            "effect" : ["blind-immune", "hex-immune", "poison-immune", "shock-immune", "weak-immune"],
             "equippable" : true,
-            "equip-target" : "player-monster"
+            "equiptarget" : "player-monster"
         },
         "black-claws" : {
+            "name" : "Black Claws",
             "power" : 10,
             "effect" : "cause-blind-1",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "purple-claws" : {
+            "name" : "Purple Claws",
             "power" : 10,
             "effect" : "cause-hex-1",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "red-claws" : {
+            "name" : "Red Claws",
             "power" : 10,
             "effect" : "cause-weak-1",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "yellow-claws" : {
+            "name" : "Yellow Claws",
             "power" : 10,
             "effect" : "cause-shock-1",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "green-claws" : {
+            "name" : "Green Claws",
             "power" : 10,
             "effect" : "cause-poison-1",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "black-spikes" : {
+            "name" : "Black Spikes",
             "power" : 5,
             "effect" : "cause-blind-2",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "purple-spikes" : {
+            "name" : "Purple Spikes",
             "power" : 5,
             "effect" : "cause-hex-2",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "red-spikes" : {
+            "name" : "Red Spikes",
             "power" : 5,
             "effect" : "cause-weak-2",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "yellow-spikes" : {
+            "name" : "Yellow Spikes",
             "power" : 5,
             "effect" : "cause-shock-2",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "green-spikes" : {
+            "name" : "Green Spikes",
             "power" : 5,
             "effect" : "cause-poison-2",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "black-fangs" : {
+            "name" :"Black Fangs",
             "effect" : "cause-blind-3",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "purple-fangs" : {
+            "name" :"Purple Fangs",
             "effect" : "cause-hex-3",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "red-fangs" : {
+            "name" :"Red Fangs",
             "effect" : "cause-weak-3",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "yellow-fangs" : {
+            "name" :"Yellow Fangs",
             "effect" : "cause-shock-3",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "green-fangs" : {
+            "name" :"Green Fangs",
             "effect" : "cause-poison-3",
             "equippable" : true,
-            "equip-target" : "monster"
+            "equiptarget" : "monster"
         },
         "health-potion-small" : {
+            "name" : "Sml Health Potion",
             "heal" : 25,
             "equippable" : false
         },
         "health-potion-med" : {
+            "name" : "Med Health Potion",
             "heal" : 50,
             "equippable" : false
         },
         "health-potion-large" : {
+            "name" : "Lrg Health Potion",
             "heal" : 100,
             "equippable" : false
         },
         "skill-potion-small" : {
-            "skill-up" : 25,
+            "name" : "Sml Skill Philter",
+            "skill-up" : 5,
             "equippable" : false
         },
         "skill-potion-med" : {
-            "skill-up" : 50,
+            "name" : "Med Skill Philter",
+            "skill-up" : 10,
             "equippable" : false
         },
         "skill-potion-large" : {
-            "skill-up" : 100,
+            "name" : "Lrg Skill Philter",
+            "skill-up" : 20,
             "equippable" : false
         },
         "blind-potion" : {
+            "name" : "Pure Water",
             "effect" : "cure-blind",
             "equippable" : false
         },
         "shock-potion" : {
+            "name" : "White Glove",
             "effect" : "cure-shock",
             "equippable" : false
         },
         "hex-potion" : {
+            "name" : "Holy Script",
             "effect" : "cure-hex",
             "equippable" : false
         },
         "weak-potion" : {
+            "name" : "Adrenaline",
             "effect" : "cure-weak",
             "equippable" : false
         },
         "poison-potion" : {
+            "name" : "Antidote",
             "effect" : "cure-poison",
             "equippable" : false
         },
         "revive-potion" : {
+            "name" : "Smelling Salts",
             "effect" : "cure-faint",
             "equippable" : false
         },
         "health-potion-small-all" : {
+            "name" : "Sml Heal-All Potion",
             "heal-all" : 25,
             "equippable" : false
         },
         "health-potion-med-all" : {
+            "name" : "Med Heal-All Potion",
             "heal-all" : 50,
             "equippable" : false
         },
         "health-potion-large-all" : {
+            "name" : "Lrg Heal-All Potion",
             "heal-all" : 100,
             "equippable" : false
         },
         "skill-potion-small-all" : {
-            "skill-up-all" : 25,
+            "name" : "Sml Skill-All Philter",
+            "skill-up-all" : 5,
             "equippable" : false
         },
         "skill-potion-med-all" : {
-            "skill-up-all" : 50,
+            "name" : "Med Skill-All Philter",
+            "skill-up-all" : 10,
             "equippable" : false
         },
         "skill-potion-large-all" : {
-            "skill-up-all" : 100,
+            "name" : "Lrg Skill-All Philter",
+            "skill-up-all" : 20,
             "equippable" : false
         },
         "blind-potion-all" : {
+            "name" : "Saline Rinse",
             "effect" : "cure-blind-all",
             "equippable" : false
         },
         "shock-potion-all" : {
+            "name" : "Megaphone",
             "effect" : "cure-shock-all",
             "equippable" : false
         },
         "hex-potion-all" : {
+            "name" : "Holy Book",
             "effect" : "cure-hex-all",
             "equippable" : false
         },
         "weak-potion-all" : {
+            "name" : "Steroids",
             "effect" : "cure-weak-all",
             "equippable" : false
         },
         "poison-potion-all" : {
+            "name" : "Anti-Venom",
             "effect" : "cure-poison-all",
             "equippable" : false
         },
         "revive-potion-all" : {
+            "name" : "Life Rain",
             "effect" : "cure-faint-all",
             "equippable" : false
         }

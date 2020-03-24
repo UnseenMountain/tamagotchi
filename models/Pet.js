@@ -5,7 +5,7 @@ var PetSchema = new mongoose.Schema({
 
     name: { type: String, default: "pet" },
     health: { type: Number, default: 5 },
-    hatched: { type: Boolean, deafult: false },
+    hatched: { type: Boolean, default: false },
     level: { type: Number, default: 1 },
     attackPower: { type: Number, default: 3 },
     multiplayer: { type: Number, default: 1.5 }
