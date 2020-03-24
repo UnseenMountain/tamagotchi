@@ -30,6 +30,8 @@ export default class LoginPage extends React.Component{
     this.widget.session.get((response) => {
       if(response.status !== 'INACTIVE'){
         this.setState({user:response.login});
+        console.log("LOGGING IN...");
+        console.log("Response Object:: ", response)
       }else{
         this.showLogin();
       }
@@ -72,9 +74,9 @@ export default class LoginPage extends React.Component{
   render(){
     return(
       <div>
-        <button id="button-login" className="btn btn-primary" href="javascript:;" onClick={e => this.modalOpen(e)}>
+        <a id="button-login" className="btn btn-primary" href="javascript:;" onClick={e => this.modalOpen(e)}>
           Click here to Sign Up or Log In
-        </button>
+        </a>
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
         {this.state.user ? null : (
           <div ref={(div) => {this.loginContainer = div; }} />

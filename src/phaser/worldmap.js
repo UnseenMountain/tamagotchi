@@ -387,7 +387,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER CITY -- if so, scene switch
         //Move the scene to the City        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('CityScene'); 
@@ -396,7 +396,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER CAVE -- if so, scene switch
         //Move the scene to the Cave        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('CaveScene'); 
@@ -405,7 +405,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER FOREST -- if so, scene switch
         //Move the scene to the Forest        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('ForestScene'); 
