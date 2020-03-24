@@ -1,7 +1,7 @@
-//DESERT MAP && MOVEMENT CODE
-
+//Phaser dependency
 import Phaser from "phaser";
-import tileMap from '../assets/forest/Forest.json';
+
+//Tile Dependencies
 import hiDefGraves from '../assets/forest/tilesheets/d6qnbs4-c4ff2415-2303-4298-98c8-21f24187b9eb.png';
 import landSprites from '../assets/forest/tilesheets/d9xkdpm-a3f22a0a-77e9-4aa5-999c-53bab01d0fa4.png';
 import gnarlyTrees from '../assets/forest/tilesheets/dapf6nc-562c87b7-1de8-45c2-979f-18e7aa8b98ad.png';
@@ -41,7 +41,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 
 
         // map in json format
-        this.load.tilemapTiledJSON('map', tileMap);
+        this.load.tilemapTiledJSON('forestmap', "forestTileMap");
         // Load the tile maps & give them identifiers
         this.load.image('land', landSprites);
         this.load.image('greenery', greenerySprites);
@@ -51,14 +51,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.load.image('gravesone', hiDefGraves);
         this.load.image('gravestwo', gravesSprites);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our two characters
-        this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
-        //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
+
+        //What monsters to load
+        // this.load.image("dragonblue",dragonB);
+        // this.load.image("dragonorrange", dragonO);
     },
     create: function ()
     {
         // create the map
-        let map = this.make.tilemap({ key: 'map' });
+        let map = this.make.tilemap({ key: 'forestmap' });
         
         // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: ame defined in tilemap load
         let landTiles = map.addTilesetImage('d9xkdpm-a3f22a0a-77e9-4aa5-999c-53bab01d0fa4', 'land');

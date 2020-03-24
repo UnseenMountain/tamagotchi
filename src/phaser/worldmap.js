@@ -1,7 +1,7 @@
-//DESERT MAP && MOVEMENT CODE
-
+//Phaser Dependency
 import Phaser from "phaser";
-import tileMap from '../assets/worldmap/WorldMap.json';
+
+//Tile Dependencies
 import landBaseOne from '../assets/worldmap/tilesheets/castle4.png';
 import landBaseTwo from '../assets/worldmap/tilesheets/Dungeon_A532.png';
 import water from '../assets/worldmap/tilesheets/wateranimate2.png';
@@ -9,8 +9,6 @@ import forest from '../assets/worldmap/tilesheets/Forest.png';
 import nature from '../assets/worldmap/tilesheets/nature2.png';
 import worldOne from '../assets/worldmap/tilesheets/World_C32.png';
 import worldTwo from '../assets/worldmap/tilesheets/WorldIcons.png';
-import charSprites from '../assets/RPG_assets.png';
-
 //console.log("tileMap:: ", tileMap);
 
 let WorldScene = new Phaser.Class({
@@ -39,10 +37,13 @@ let WorldScene = new Phaser.Class({
   /_\)   /_\)/_/\\)  /_\)  /_\)  |::|::|:|:::|           /_\)           /  \     
 _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 /*////////////////////////////[MAP PROGRAMMING]////////////////////////////*/
-
+        
+        //Loading Enemies
+        this.load.image("dragonblue", "dragonB");
+        this.load.image("dragonorrange", "dragonO");
 
         // map in json format
-        this.load.tilemapTiledJSON('map', tileMap);
+        this.load.tilemapTiledJSON('worldmap', "worldTilemap");
         // Give tile map identifiers and load them based on import
         this.load.image('landone', landBaseOne);
         this.load.image('landtwo', landBaseTwo);
@@ -52,14 +53,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.load.image('worldone', worldOne);
         this.load.image('worldtwo', worldTwo);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our two characters
-        this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
-        //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
+
+        //What monsters to load
+        // this.load.image("dragonblue",dragonB);
+        // this.load.image("dragonorrange", dragonO);
     },
     create: function ()
     {
         // create the map
-        let map = this.make.tilemap({ key: 'map' });
+        let map = this.make.tilemap({ key: 'worldmap' });
         
         // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: ame defined in tilemap load
         let landOneTiles = map.addTilesetImage('castle', 'landone');
@@ -246,6 +248,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         _¶¶¶¶¶.__|¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶
                              ===*/
 
+        //EVENTUALLY: PUT THIS IN A SEPARATE FILE
         // animation with key 'left', we don't need left and right as we will use one and flip the sprite
         this.anims.create({
             key: 'left',
@@ -275,7 +278,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         });        
 
         // our player sprite created through the physics system (params measured in pixels)
-        this.player = this.physics.add.sprite(1386, 2964, 'player', 15);
+        this.player = this.physics.add.sprite(1366, 2984, 'player', 15);
         
         // don't go out of the map
         this.physics.world.bounds.width = map.widthInPixels;
@@ -294,15 +297,58 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.cursors = this.input.keyboard.createCursorKeys();
         
         // where the enemies will be ~~ SOMEWHAT RANDOMIZED; DOESN'T CHANGE
-        this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
-        for(let i = 0; i < 40; i++) {
-            let x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-            let y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
-            // parameters are x, y, width, height
-            this.spawns.create(x, y, 20, 20);            
-        }        
-        // add colliders
+        //COMMENT OUT FOR TESTING
+        // this.spawns = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // for(let i = 0; i < 40; i++) {
+        //     let x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
+        //     let y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
+        //     // parameters are x, y, width, height
+        //     this.spawns.create(x, y, 20, 20);            
+        // }
+        //COMMENT OUT FOR TESTING        
+        //Add colliders for enemies
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+
+    //        ______
+    //     ,-' ;  ! `-.
+    //    / :  !  :  . \
+    //   |_ ;   __:  ;  |
+    //   )| .  :)(.  !  |       REAL
+    //   |"    (##)  _  |           FAKE
+    //   |  :  ;`'  (_) (               DOORS
+    //   |  :  :  .     |
+    //   )_ !  ,  ;  ;  |
+    //   || .  .  :  :  |       "Get in here quick, get out quicker
+    //   |" .  |  :  .  |           with an arm full of fake doors in your arms."
+    //   |mt-2_;----.___|                                           -Fake Doors Salesman
+
+        // where the Desert will be
+        this.desert = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // parameters are x, y, width, height
+        this.desert.create(300, 3076, 120, 120);                 
+        //Add colliders
+        this.physics.add.overlap(this.player, this.desert, this.onEnterDesert, false, this);
+  
+        // where the Base City will be
+        this.city = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // parameters are x, y, width, height
+        this.city.create(1286, 360, 120, 120);                 
+        //Add colliders
+        this.physics.add.overlap(this.player, this.city, this.onEnterCity, false, this);
+  
+        // where the Forest will be
+        this.forest = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // parameters are x, y, width, height
+        this.forest.create(1160, 1852, 100, 100);                 
+        //Add colliders
+        this.physics.add.overlap(this.player, this.forest, this.onEnterForest, false, this);
+  
+        // where the Cave will be
+        this.cave = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // parameters are x, y, width, height
+        this.cave.create(1268, 792, 100, 80);                 
+        //Add colliders
+        this.physics.add.overlap(this.player, this.cave, this.onEnterCave, false, this);
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
@@ -314,12 +360,56 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         
         //[[[  VIP :: CHANGE SO BATTLES ARE RANDOM!!! ]]]
         // start battle 
-        //PUT LUKE'S BATTLE CODE HERE
-        //&& CHANGE THE STATE TO BATTLE; SHOW THE BATTLE SCREEN 
+        //stop input on current scene 
         this.input.stopPropagation();
         // start battle 
         this.scene.switch('BattleScene'); 
     },
+    onEnterDesert: function(player, zone) {        
+        //Countdown three seconds; if user still in area -
+        //MODAL TO ASK IF USER WANTS TO ENTER DESERT -- if so, scene switch
+        //Move the scene to the Desert        
+        
+        this.input.stopPropagation();
+        // move to  
+        this.scene.switch('DesertScene'); 
+    },
+    onEnterCity: function(player, zone) {
+        //Countdown three seconds; if user still in area -        
+        //MODAL TO ASK IF USER WANTS TO ENTER CITY -- if so, scene switch
+        //Move the scene to the City        
+        
+        this.input.stopPropagation();
+        // move to  
+        this.scene.switch('CityScene'); 
+    },
+    onEnterCave: function(player, zone) {
+        //Countdown three seconds; if user still in area -        
+        //MODAL TO ASK IF USER WANTS TO ENTER CAVE -- if so, scene switch
+        //Move the scene to the Cave        
+        
+        this.input.stopPropagation();
+        // move to  
+        this.scene.switch('CaveScene'); 
+    },
+    onEnterForest: function(player, zone) {
+        //Countdown three seconds; if user still in area -        
+        //MODAL TO ASK IF USER WANTS TO ENTER FOREST -- if so, scene switch
+        //Move the scene to the Forest        
+        
+        this.input.stopPropagation();
+        // move to  
+        this.scene.switch('ForestScene'); 
+    },
+
+//            __    _
+//             =  _( }
+//    -=   _   <<  \
+//        `.\__/`/\\    -=CHARACTER MOVEMENT
+// -=      '--'\\  `
+//     -=     //
+// jgs        \)
+
     update: function (time, delta)
     {
         //console.log(delta);

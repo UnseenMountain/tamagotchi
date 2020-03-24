@@ -1,7 +1,7 @@
-//DESERT MAP && MOVEMENT CODE
-
+//Phaser Dependency
 import Phaser from "phaser";
-import tileMap from '../assets/desert/Desert_Meteor.json';
+
+//Tile dependencies
 import rockSprites from '../assets/desert/tilesheets/rocks.png';
 import desertSprites from '../assets/desert/tilesheets/Outside_A2.png';
 import caveSprites from '../assets/desert/tilesheets/red_cave.png';
@@ -9,8 +9,6 @@ import planksSprites from '../assets/desert/tilesheets/planks.png';
 import miscSprites from '../assets/desert/tilesheets/miscshop_bridge.png';
 import bonesSprites from '../assets/desert/tilesheets/bones.png';
 import sekihiSprites from '../assets/desert/tilesheets/sekihi01.png';
-import charSprites from '../assets/RPG_assets.png';
-
 //console.log("tileMap:: ", tileMap);
 
 let DesertScene = new Phaser.Class({
@@ -41,8 +39,8 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 /*////////////////////////////[MAP PROGRAMMING]////////////////////////////*/
 
 
-        // map in json format
-        this.load.tilemapTiledJSON('map', tileMap);
+        // map in json format -- first name os key given in boot, then name of map
+        this.load.tilemapTiledJSON('desertmap', "desertTileMap");
         // Load the tile maps & give them identifiers
         this.load.image('rocks', rockSprites);
         this.load.image('desert', desertSprites);
@@ -52,14 +50,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.load.image('bones', bonesSprites);
         this.load.image('sekihi', sekihiSprites);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our two characters
-        this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
-        //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
+        
+        //What monsters to load
+        // this.load.image("dragonblue",dragonB);
+        // this.load.image("dragonorrange", dragonO);
     },
     create: function ()
     {
         // create the map
-        let map = this.make.tilemap({ key: 'map' });
+        let map = this.make.tilemap({ key: 'desertmap' });
         
         // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: ame defined in tilemap load
         let rocksTiles = map.addTilesetImage('rocks', 'rocks');
@@ -234,6 +233,21 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         }        
         // add colliders
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
+
+        //        |~
+        //}------{\\
+        //…………µ˜……\\
+        //   door …\\
+        //   dOOR  …\\
+        //   DOOR   …\\
+        //   DOOr   .π\\
+        //``§˚ºº•øˆ¨å§˚ºº•øˆ¨å§
+        // where the Desert will be
+        this.worldmap = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
+        // parameters are x, y, width, height
+        this.worldmap.create(0, 550, 20, 420);                 
+        //Add colliders
+        this.physics.add.overlap(this.player, this.worldmap, this.onEnterWorldMap, false, this);
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
@@ -248,8 +262,17 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //PUT LUKE'S BATTLE CODE HERE
         //&& CHANGE THE STATE TO BATTLE; SHOW THE BATTLE SCREEN 
         this.input.stopPropagation();
+        
         // start battle 
-        this.scene.switch('BattleScene'); 
+        this.scene.switch('BattleScene');
+    },
+    onEnterWorldMap: function(player, zone) {        
+        //MODAL TO ASK IF USER WANTS TO ENTER WORLD -- if so, scene switch
+        //Move the scene to the world
+        this.input.stopPropagation();
+        // Move to world scene 
+        this.scene.switch('WorldScene'); 
+        this.scene.stop('DesertScene');
     },
     update: function (time, delta)
     {

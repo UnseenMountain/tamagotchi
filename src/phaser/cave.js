@@ -1,14 +1,13 @@
-//DESERT MAP && MOVEMENT CODE
-
+//Phaser Dependencies
 import Phaser from "phaser";
-import tileMap from '../assets/cave/Cave.json';
+
+//Tile Dependencies
 import loDefCave from '../assets/cave/tilesheets/All.png';
 import caveRunner from '../assets/cave/tilesheets/cave_tileset.png';
 import hiDefCave from '../assets/cave/tilesheets/cave2.png';
 import crystals from '../assets/cave/tilesheets/crystals.png';
 import loDefFloor from '../assets/cave/tilesheets/TileA5.png';
 import water from '../assets/cave/tilesheets/wateranimate2.png';
-import charSprites from '../assets/RPG_assets.png';
 //console.log("tileMap:: ", tileMap);
 
 let CaveScene = new Phaser.Class({
@@ -40,7 +39,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 
 
         // map in json format
-        this.load.tilemapTiledJSON('map', tileMap);
+        this.load.tilemapTiledJSON('cavemap', "caveTileMap");
         // Load the tile maps & give them identifiers
         this.load.image('lowDefCave', loDefCave);
         this.load.image('lowDefFloor', loDefFloor);
@@ -49,14 +48,15 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         this.load.image('caveRunner', caveRunner);
         this.load.image('water', water);
         //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-        // our character
-        this.load.spritesheet('player', charSprites, { frameWidth: 32, frameHeight: 32 });
-        //MAKE IT TWICE AS BIG; UTILIZE SPRITESHEET ALREADY THERE
+
+        //What monsters to load
+        // this.load.image("dragonblue",dragonB);
+        // this.load.image("dragonorrange", dragonO);
     },
     create: function ()
     {
         // create the map
-        let map = this.make.tilemap({ key: 'map' });
+        let map = this.make.tilemap({ key: 'cavemap' });
         
         // Map tilesets; Param1: Name of the tilemap in tiled (found in json); Param2: are defined in tilemap load
         let lowDefCaveTiles = map.addTilesetImage('Preston', 'lowDefCave');
