@@ -14,3 +14,7 @@ button {
     margin-left: 10px;
     padding: 0px;
 }
+
+#button-login{
+    min-width: 170px;
+}

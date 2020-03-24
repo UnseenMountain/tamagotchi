@@ -781,7 +781,7 @@
                 "note" : "Level modifier will be passed into function; 1 is lowest level"
             },
             "LightDragonEmperor" : {
-                "name" : "Ximmurimmthe Ancient",
+                "name" : "Ximmurimm the Ancient",
                 "image" : "./src/assets/creatures/maincreatures/LightDragonEmperor.png",
                 "health" : 82,
                 "attack" : 34,
@@ -819,7 +819,7 @@
                 "note" : "Level modifier will be passed into function; 1 is lowest level"
             },
             "SeaOcti" : {
-                "name" : "Holy Orb",
+                "name" : "Octid",
                 "image" : "./src/assets/creatures/maincreatures/SeaOcti.png",
                 "health" : 34,
                 "attack" : 10,
@@ -848,7 +848,7 @@
                 "note" : "Level modifier will be passed into function; 1 is lowest level"
             },
             "SeaCalamity" : {
-                "name" : "Calamity Baahlustair",
+                "name" : "Calamity Baalustair",
                 "image" : "./src/assets/creatures/maincreatures/SeaCalamity.png",
                 "health" : 93,
                 "attack" : 36,

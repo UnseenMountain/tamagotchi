@@ -58,8 +58,6 @@ export default class LoginPage extends React.Component{
     });
   }
 
-
-
   modalOpen() {
     this.setState({ modal: true });
   }
@@ -74,9 +72,9 @@ export default class LoginPage extends React.Component{
   render(){
     return(
       <div>
-        <a href="javascript:;" onClick={e => this.modalOpen(e)}>
+        <button id="button-login" className="btn btn-primary" href="javascript:;" onClick={e => this.modalOpen(e)}>
           Click here to Sign Up or Log In
-        </a>
+        </button>
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
         {this.state.user ? null : (
           <div ref={(div) => {this.loginContainer = div; }} />
