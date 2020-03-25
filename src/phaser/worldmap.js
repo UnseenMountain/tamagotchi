@@ -11,6 +11,8 @@ import worldOne from '../assets/worldmap/tilesheets/World_C32.png';
 import worldTwo from '../assets/worldmap/tilesheets/WorldIcons.png';
 //console.log("tileMap:: ", tileMap);
 
+import DoorModal from "./prefabs/doormodal.js";
+
 let WorldScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -327,28 +329,34 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // parameters are x, y, width, height
         this.desert.create(300, 3076, 120, 120);                 
         //Add colliders
-        this.physics.add.overlap(this.player, this.desert, this.onEnterDesert, false, this);
+        this.physics.add.overlap(this.player, this.desert, this.onEnterDesert, false /*this.checkModal*/, this);
   
         // where the Base City will be
         this.city = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         // parameters are x, y, width, height
         this.city.create(1286, 360, 120, 120);                 
         //Add colliders
-        this.physics.add.overlap(this.player, this.city, this.onEnterCity, false, this);
+        this.physics.add.overlap(this.player, this.city, this.onEnterCity, false /*this.checkModal*/, this);
   
         // where the Forest will be
         this.forest = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         // parameters are x, y, width, height
         this.forest.create(1160, 1852, 100, 100);                 
         //Add colliders
-        this.physics.add.overlap(this.player, this.forest, this.onEnterForest, false, this);
+        this.physics.add.overlap(this.player, this.forest, this.onEnterForest, false /*this.checkModal*/, this);
   
         // where the Cave will be
         this.cave = this.physics.add.group({ classType: Phaser.GameObjects.Zone });
         // parameters are x, y, width, height
         this.cave.create(1268, 792, 100, 80);                 
         //Add colliders
-        this.physics.add.overlap(this.player, this.cave, this.onEnterCave, false, this);
+        this.physics.add.overlap(this.player, this.cave, this.onEnterCave, false /*this.checkModal*/, this);
+    },
+    checkModal: function(){
+        //if countdowntimefinished = true{ ...  }
+        this.scene.run("DoorModal");
+        //Return true or false from doormodal
+        //After answering, countdowntimefinished = false; count down three seconds & countdowntimefinished = true 
     },
     onMeetEnemy: function(player, zone) {        
         // we move the zone to some other location
@@ -357,9 +365,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         
         // shake the world
         this.cameras.main.shake(300);
-        
-        //[[[  VIP :: CHANGE SO BATTLES ARE RANDOM!!! ]]]
-        // start battle 
+
         //stop input on current scene 
         this.input.stopPropagation();
         // start battle 
@@ -370,15 +376,18 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //MODAL TO ASK IF USER WANTS TO ENTER DESERT -- if so, scene switch
         //Move the scene to the Desert        
         
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
+        // USE THIS WITH MODAL TO PAUSE MODAL this.scene.pause("WorldMap");
         // move to  
-        this.scene.switch('DesertScene'); 
+        this.scene.start('DesertScene'); 
+        //USE this.scene.switch WHEN FIXED
     },
     onEnterCity: function(player, zone) {
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER CITY -- if so, scene switch
         //Move the scene to the City        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('CityScene'); 
@@ -387,7 +396,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER CAVE -- if so, scene switch
         //Move the scene to the Cave        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('CaveScene'); 
@@ -396,7 +405,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         //Countdown three seconds; if user still in area -        
         //MODAL TO ASK IF USER WANTS TO ENTER FOREST -- if so, scene switch
         //Move the scene to the Forest        
-        
+        this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // move to  
         this.scene.switch('ForestScene'); 

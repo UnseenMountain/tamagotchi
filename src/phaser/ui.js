@@ -3,7 +3,6 @@ import HeroesMenu from "./prefabs/heroesmenu";
 import EnemiesMenu from "./prefabs/enemiesmenu";
 import ActionsMenu from "./prefabs/actionsmenu";
 import Message from "./prefabs/message";
-import BattleScene from "./battle";
 
 // User Interface scene
 let UIScene = new Phaser.Class({

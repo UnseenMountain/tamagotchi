@@ -1,13 +1,13 @@
 import Phaser from "phaser";
 import PlayerCharacter from "./prefabs/playercharacter";
 import Enemy from "./prefabs/enemy";
+//Make this a variable; load from DB object
 import desertBG from '../assets/images/battle_backgrounds/desert.jpg';
 
 //Make a dummy object this pulls info to [FROM DB] and displays specific battle screen/characters, etc
 
 // console.log("tileMap:: ", tileMap);
 // console.log("tileSprites:: ", tileSprites);
-
 let BattleScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -103,7 +103,7 @@ let BattleScene = new Phaser.Class({
     },
     // when the player have selected the enemy to be attacked
     receivePlayerSelection: function(action, target) {
-        if(action == "attack") {            
+        if(action === "attack") {            
             this.units[this.index].attack(this.enemies[target]);              
         }
         // next turn in 3 seconds
@@ -120,8 +120,8 @@ let BattleScene = new Phaser.Class({
         this.units.length = 0;
         // sleep the UI
         this.scene.sleep('UIScene');
-        // return to WorldScene and sleep current BattleScene
-        this.scene.switch('WorldScene'); //This just works, even if not worldscene. Don't know why
+        // return to Current Scene and sleep current BattleScene
+        this.scene.switch('WorldScene'); //CHANGE TO CURRENTSCENE; DB
         this.scene.stop('BattleScene');
     }
 });

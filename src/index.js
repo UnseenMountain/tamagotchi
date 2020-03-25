@@ -18,6 +18,9 @@ import ForestScene from "./phaser/forest";
 import CaveScene from "./phaser/cave";
 import CityScene from "./phaser/city";
 
+//Door Modal Scene
+import DoorModal from "./phaser/prefabs/doormodal";
+
 //Create config~
 const config = {
     type: Phaser.AUTO,
@@ -40,11 +43,12 @@ const config = {
         CaveScene,
         CityScene,
         BattleScene,
-        UIScene
-      ]
-  };
- //~ and declate it to Phaser 
-const game = new Phaser.Game(config);
+        UIScene,
+        DoorModal
+    ]
+};
+//~ and declare it to Phaser 
+export const game = new Phaser.Game(config);
 
 //Render the DOM
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -52,4 +56,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// serviceWorker.unregister();

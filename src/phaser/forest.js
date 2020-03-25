@@ -9,7 +9,6 @@ import gravesSprites from '../assets/forest/tilesheets/graves-shadow_1.png';
 import treesOne from '../assets/forest/tilesheets/mv_trees_by_schwarzenacht-dazcdmq-1.png';
 import treesTwo from '../assets/forest/tilesheets/pandamaru_mv_nature1_by_schwarzenacht-d9k7n23.png';
 import greenerySprites from '../assets/forest/tilesheets/rpg_maker__grass__flowers_and_windows_tileset_by_xxjapozeroxx-dbpxkvy.png';
-import charSprites from '../assets/RPG_assets.png';
 //console.log("tileMap:: ", tileMap);
 
 let ForestScene = new Phaser.Class({

@@ -4,8 +4,7 @@ import Backbone from 'backbone';
 import Modal from "../Modal/index.js";
 import "./style.css";
 import { Button } from "react-bootstrap";
-
-
+import $ from "jquery";
 
 export default class LoginPage extends React.Component{
   constructor(){
@@ -33,6 +32,8 @@ export default class LoginPage extends React.Component{
     this.widget.session.get((response) => {
       if(response.status !== 'INACTIVE'){
         this.setState({user:response.login});
+        this.playerLoad(response);
+        //PASS THIS INTO THE DB
       }else{
         this.showLogin();
       }
@@ -61,8 +62,6 @@ export default class LoginPage extends React.Component{
     });
   }
 
-
-
   modalOpen() {
     this.setState({ modal: true });
   }
@@ -74,13 +73,33 @@ export default class LoginPage extends React.Component{
     });
   }
 
+  playerLoad(response){
+    console.log("LOGGING IN...");
+    // console.log("User ID:: ", response.userId);
+    const player = response.userId;
+   
+    let data = { //Get character data from server
+    player : player
+    }
+    console.log(data);
+
+    // Send the POST request.
+    $.ajax("/", {
+        type: "GET",
+        data: data
+    }).then(
+    function(req) {
+    });
+  }
+
   render(){
     return(
       <div>
-        <a href="javascript:;" onClick={e => this.modalOpen(e)}>
-        <Button variant="primary">Click here to Sign Up or Log In</Button>
-          
-        </a>
+        {this.state.user ? null : (
+          <a href="javascript:;" onClick={e => this.modalOpen(e)}>
+          <Button variant="primary">Click here to Sign Up or Log In</Button>
+          </a>
+        )}
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
         {this.state.user ? null : (
           <div ref={(div) => {this.loginContainer = div; }} />
@@ -89,7 +108,7 @@ export default class LoginPage extends React.Component{
         {this.state.user ? (
           <div className="container">
             <div>Welcome, {this.state.user}!</div>
-            <button onClick={this.logout}>Logout</button>
+            <Button variant="secondary" onClick={this.logout}>Logout</Button>
           </div>
         ) : null}
       </div>
