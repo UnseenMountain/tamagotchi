@@ -1,10 +1,10 @@
 var mongoose = require("mongoose");
 
-var ItemsSchema = new mongoose.Schema({
+var ItemSchema = new mongoose.Schema({
 
     name: { type: String },
     effect: { type: String },
-    equippable: { type: Boolean, deafult: false },
+    equippable: { type: Boolean, default: false },
     equiptarget: { type: String },
     power: { type: Number },
     defense: { type: Number }
@@ -12,6 +12,6 @@ var ItemsSchema = new mongoose.Schema({
 
 })
 
-var Items = mongoose.model("Items", ItemsSchema);
+var Item = mongoose.model("Item", ItemSchema);
 
-module.exports = Items;
+module.exports = Item;

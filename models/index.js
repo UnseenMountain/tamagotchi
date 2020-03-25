@@ -1,6 +1,6 @@
 module.exports = {
     Enemy: require("./Enemy"),
     Pet: require("./Pet"),
-    Items: require("./Items"),
+    Item: require("./Item"),
     Player: require("./Player")
 };
