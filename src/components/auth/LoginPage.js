@@ -73,23 +73,24 @@ export default class LoginPage extends React.Component{
     });
   }
 
+  //LOAD OR CREATE THE PLAYER
   playerLoad(response){
-    console.log("LOGGING IN...");
-    // console.log("User ID:: ", response.userId);
-    const player = response.userId;
+    // console.log("LOGGING IN...");
+    // // console.log("User ID:: ", response.userId);
+    // const player = response.userId;
    
-    let data = { //Get character data from server
-    player : player
-    }
-    console.log(data);
+    // let data = { //Get character data from server
+    // player : player
+    // }
+    // console.log(data);
 
-    // Send the POST request.
-    $.ajax("/", {
-        type: "GET",
-        data: data
-    }).then(
-    function(req) {
-    });
+    // // Send the POST request.
+    // $.ajax("/", {
+    //     type: "GET",
+    //     data: data
+    // }).then(
+    // function(req) {
+    // });
   }
 
   render(){
