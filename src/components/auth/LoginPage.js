@@ -4,6 +4,7 @@ import Backbone from 'backbone';
 import Modal from "../Modal/index.js";
 import "./style.css";
 import { Button } from "react-bootstrap";
+import $ from "jquery";
 
 export default class LoginPage extends React.Component{
   constructor(){
@@ -74,9 +75,21 @@ export default class LoginPage extends React.Component{
 
   playerLoad(response){
     console.log("LOGGING IN...");
-    console.log("User ID:: ", response.userId);
+    // console.log("User ID:: ", response.userId);
     const player = response.userId;
-    return player;
+   
+    let data = { //Get character data from server
+    player : player
+    }
+    console.log(data);
+
+    // Send the POST request.
+    $.ajax("/", {
+        type: "GET",
+        data: data
+    }).then(
+    function(req) {
+    });
   }
 
   render(){

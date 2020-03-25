@@ -7,8 +7,7 @@ router.route("/")
     .post(enemyController.create);
 
 // Matches with "/api/enemies/:id"
-router
-    .route("/:id")
+router.route("/:id")
     .get(enemyController.findById)
     .put(enemyController.update)
 //   .delete(booksController.remove);

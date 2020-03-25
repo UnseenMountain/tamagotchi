@@ -15,8 +15,19 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tamagotchi");
+// Connect to Mongo DB
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/tamagotchi";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+var db = mongoose.connection;
+
+// In case of mongoose errors
+db.on("error", function(error) {
+    console.warn("Mongoose Error: ", error);
+});
+// Otherwise log a success message
+db.once("open", function() {
+    console.info("Mongoose connection successful.");
+});
 
 // Start the API server
 app.listen(PORT, function () {
