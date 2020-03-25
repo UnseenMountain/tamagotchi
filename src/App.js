@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Nav from './components/Nav/Nav.js';
-import Footer from './components/Footer/footer.js';
+import Footer from './components/Footer/Footer.js';
 // import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
@@ -16,6 +16,7 @@ import SaveMenu from './components/Save/SaveMenu.js'
 function App() {
   return (
     <Router>
+      
        {/* <Security issuer='https://dev-243399.okta.com/oauth2/default'
                   clientId='0oa33m68qMWbxYgrm4x6'
                   redirectUri={window.location.origin + '/implicit/callback'} >
@@ -34,7 +35,7 @@ function App() {
           <div id="phaser"></div>
         </div>
         <Footer />
-      
+     
     </Router> 
   );
 }

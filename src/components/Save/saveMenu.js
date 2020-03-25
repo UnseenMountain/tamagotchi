@@ -21,9 +21,15 @@ function SaveMenu(props) {
         <Modal.Body >
           <div className="menu">
             
-            <h1>
+            <h5>
               Save 1
-     </h1>
+            </h5>
+            <h5>
+              Save 2
+            </h5>
+            <h5>
+              Save 3
+            </h5>
 
           </div>
 
@@ -34,7 +40,7 @@ function SaveMenu(props) {
             Close
             </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Save Game
             </Button>
         </Modal.Footer>
       </Modal>

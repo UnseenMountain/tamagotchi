@@ -76,9 +76,12 @@ export default class LoginPage extends React.Component{
 
   render(){
     return(
-      <div>
+      <div >
+      
         <a href="javascript:;" onClick={e => this.modalOpen(e)}>
-        <Button variant="primary">Click here to Sign Up or Log In</Button>
+         
+        <Button variant="primary">Sign Up or Log In</Button>
+        
           
         </a>
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
