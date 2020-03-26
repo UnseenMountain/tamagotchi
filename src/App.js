@@ -29,37 +29,43 @@ import CityScene from "./phaser/city";
 import DoorModal from "./phaser/prefabs/doormodal";
 
 class App extends Component {
-  state = {
-    player:{},
-    initialize: true,
-    game: {
-      type: Phaser.AUTO,
-      width: 750,
-      height: 600,
-      zoom: 1,
-      physics: {
-          default: 'arcade',
-          arcade: {
-              gravity: { y: 0 },
-              debug: false // set to true to view zones
-          }
-      },
-      scene: [
-        BootScene, 
-        WorldScene,
-        DesertScene,
-        ForestScene,
-        CaveScene,
-        CityScene,
-        BattleScene,
-        UIScene,
-        DoorModal
-      ]
+  constructor (props) {
+    super(props)  
+    this.state = {
+      player:{},
+      initialize: true,
+      game: {
+        type: Phaser.AUTO,
+        width: 750,
+        height: 600,
+        zoom: 1,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 0 },
+                debug: false // set to true to view zones
+            }
+        },
+        scene: [
+          BootScene, 
+          WorldScene,
+          DesertScene,
+          ForestScene,
+          CaveScene,
+          CityScene,
+          BattleScene,
+          UIScene,
+          DoorModal
+        ]
+      }
     }
+    this.handler = this.handler.bind(this)
   }
 
-  updateState(text) {
-      this.setState({text})
+  handler(playerObj) {
+    this.setState({
+      player: playerObj
+    })
   }
 
   render(){
@@ -78,7 +84,7 @@ class App extends Component {
           <div>
               <Navbar bg="dark" variant="dark">
                   <Navbar.Brand href="#home">Tamagotchi simulator</Navbar.Brand>
-                  <ul><LoginPage path="/login" component={LoginPage} state={LoginPage.state}/></ul>
+                  <ul><LoginPage path="/login" component={LoginPage} handler = {this.handler}/></ul>
               </Navbar>
           </div>
           

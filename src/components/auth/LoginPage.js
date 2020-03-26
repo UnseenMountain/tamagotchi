@@ -5,15 +5,12 @@ import Modal from "../Modal/index.js";
 import "./style.css";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
-import App from "../../App";
-// import Character from "../CharState/CharState";
 
 export default class LoginPage extends React.Component{
   constructor(){
     super();
     this.state = { 
-      user: null,
-      player: {}
+      user: null
     };
     this.widget = new OktaSignIn({
       baseUrl: 'https://dev-773440.okta.com',
@@ -59,7 +56,8 @@ export default class LoginPage extends React.Component{
           //Pass the location to Phaser???
           // console.log("res.data[0].location:: ", res.data[0].location);
           //Update player state
-          this.setState({player: res.data[0]})
+          // this.setState({player: res.data[0]})
+          this.playerLogin(res.data[0])
         }}
         )
       .catch(err => console.log(err));
@@ -106,6 +104,10 @@ export default class LoginPage extends React.Component{
       user: "",
       modal: false
     });
+  }
+
+  playerLogin(playerObj){
+    this.props.handler(playerObj)
   }
 
   render(){
