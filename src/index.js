@@ -1,54 +1,10 @@
 //React dependency
 import React from 'react';
 import ReactDOM from 'react-dom';
-//Phaser dependency
-import Phaser from "phaser";
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-//Importing Scenes
-import BootScene from "./phaser/boot";
-import BattleScene from "./phaser/battle";
-import UIScene from "./phaser/ui";
-//Map Scenes
-import WorldScene from "./phaser/worldmap";
-import DesertScene from "./phaser/desert";
-import ForestScene from "./phaser/forest";
-import CaveScene from "./phaser/cave";
-import CityScene from "./phaser/city";
-
-//Door Modal Scene
-import DoorModal from "./phaser/prefabs/doormodal";
-
-//Create config~
-const config = {
-    type: Phaser.AUTO,
-    parent: 'phaser',
-    width: 750,
-    height: 600,
-    zoom: 1,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: false // set to true to view zones
-        }
-    },
-    scene:   [
-        BootScene, 
-        WorldScene,
-        DesertScene,
-        ForestScene,
-        CaveScene,
-        CityScene,
-        BattleScene,
-        UIScene,
-        DoorModal
-    ]
-};
-//~ and declare it to Phaser 
-export const game = new Phaser.Game(config);
+// import * as serviceWorker from './serviceWorker';
 
 //Render the DOM
 ReactDOM.render(<App />, document.getElementById('root'));

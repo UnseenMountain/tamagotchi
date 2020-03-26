@@ -5,6 +5,7 @@ import Modal from "../Modal/index.js";
 import "./style.css";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
+// import Character from "../CharState/CharState";
 // import $ from "jquery";
 
 export default class LoginPage extends React.Component{
@@ -12,10 +13,7 @@ export default class LoginPage extends React.Component{
     super();
     this.state = { 
       user: null,
-      player: {
-        playerId: null,
-        level: 1
-      }
+      player: {}
     };
     this.widget = new OktaSignIn({
       baseUrl: 'https://dev-773440.okta.com',
@@ -58,9 +56,10 @@ export default class LoginPage extends React.Component{
           this.newPlayer(playerId);
         } else {
           console.log("PLAYER EXISTS");
-          //Pass the location to Phaser
-          console.log("res.data[0].location:: ", res.data[0].location);
-                  //Update player state
+          //Pass the location to Phaser???
+          // console.log("res.data[0].location:: ", res.data[0].location);
+          //Update player state
+          this.setState({player: res.data[0]})
         }}
         )
       .catch(err => console.log(err));

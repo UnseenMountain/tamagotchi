@@ -9,6 +9,9 @@ export default {
   createPlayer: function(playerId) {
     return axios.post("/api/players/" + playerId);
   },
+
+  //=========^^^^^^^^^^^WORKING^^^^^^^^^^^=========
+  
   //Saves player state to the DB by id
   updatePlayer: function(playerData) {
     return axios.put("/api/players/" + playerData.playerId, playerData);
