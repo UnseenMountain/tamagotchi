@@ -5,7 +5,7 @@ import { IonPhaser } from '@ion-phaser/react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Nav from './components/Nav/Nav.js';
+import { Navbar } from 'react-bootstrap';
 import Footer from './components/Footer/footer.js';
 // import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
@@ -58,10 +58,15 @@ class App extends Component {
     }
   }
 
+  updateState(text) {
+      this.setState({text})
+  }
+
   render(){
+    console.log("MAIN GAME STATE:: ", this.state);
     const { initialize, game } = this.state
     return (
-      <Router>
+      <>
          {/* <Security issuer='https://dev-243399.okta.com/oauth2/default'
                     clientId='0oa33m68qMWbxYgrm4x6'
                     redirectUri={window.location.origin + '/implicit/callback'} >
@@ -70,8 +75,13 @@ class App extends Component {
             <Route path='/implicit/callback' component={LoginCallback} />
           </Security> */}
         <div>
-          <Nav />
-          <Route path="/login" component={LoginPage} />
+          <div>
+              <Navbar bg="dark" variant="dark">
+                  <Navbar.Brand href="#home">Tamagotchi simulator</Navbar.Brand>
+                  <ul><LoginPage path="/login" component={LoginPage} state={LoginPage.state}/></ul>
+              </Navbar>
+          </div>
+          
          
             {/* <Save/> */}
           </div>
@@ -80,8 +90,7 @@ class App extends Component {
             <IonPhaser game={game} initialize={initialize} />
           </div>
           <Footer />
-        
-      </Router> 
+      </> 
     )
   }
 }

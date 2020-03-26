@@ -5,8 +5,8 @@ import Modal from "../Modal/index.js";
 import "./style.css";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
+import App from "../../App";
 // import Character from "../CharState/CharState";
-// import $ from "jquery";
 
 export default class LoginPage extends React.Component{
   constructor(){
@@ -107,28 +107,6 @@ export default class LoginPage extends React.Component{
       modal: false
     });
   }
-
-  //LOAD OR CREATE THE PLAYER
-  // playerLoad(response){
-  //   console.log("RESPONSE:: ", response);
-  //   // console.log("User ID:: ", response.userId);
-  //   const playerId = response.userId;
-   
-  //   let data = { //Send the userId from Okta to mongo
-  //     playerId : playerId
-  //   }
-  //   console.log(data);
-
-  //   // Send the POST request.
-  //   $.ajax("/api/players/" + playerId, {
-  //       type: "GET",
-  //       data: data
-  //   }).then(
-  //   function(req, res) {
-  //     console.log("REQ::", req);
-  //     console.log("RES::", res);
-  //   });
-  // }
 
   render(){
     return(
