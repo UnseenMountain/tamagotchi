@@ -11,6 +11,7 @@ router
 router
     .route("/:id")
     .get(playerController.findById)
+    .post(playerController.create)
     .put(playerController.update)
 
 module.exports = router;
