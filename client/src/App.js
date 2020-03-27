@@ -4,9 +4,10 @@ import Phaser from "phaser";
 import { IonPhaser } from '@ion-phaser/react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { Navbar } from 'react-bootstrap';
-import Footer from './components/Footer/footer';
+
+import Footer from './components/Footer/footer.js';
+
 // import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
@@ -23,6 +24,33 @@ import DesertScene from "./phaser/desert";
 import ForestScene from "./phaser/forest";
 import CaveScene from "./phaser/cave";
 import CityScene from "./phaser/city";
+
+
+function App() {
+  return (
+    <Router>
+      
+       {/* <Security issuer='https://dev-243399.okta.com/oauth2/default'
+                  clientId='0oa33m68qMWbxYgrm4x6'
+                  redirectUri={window.location.origin + '/implicit/callback'} >
+          <Route path='/' exact={true} component={Home}/>
+          <SecureRoute path='/protected' component={Menu}/>
+          <Route path='/implicit/callback' component={LoginCallback} />
+        </Security> */}
+      <div>
+        <Nav />
+        <Route path="/login" component={LoginPage} />
+       
+          {/* <Save/> */}
+        </div>
+        <SaveMenu/>
+        <div id="phaser-box">
+          <div id="phaser"></div>
+        </div>
+        <Footer />
+     
+    </Router> 
+  );
 
 //Door Modal Scene
 import DoorModal from "./phaser/prefabs/doormodal";
@@ -98,6 +126,7 @@ class App extends Component {
       </> 
     )
   }
+
 }
 
 export default App;
