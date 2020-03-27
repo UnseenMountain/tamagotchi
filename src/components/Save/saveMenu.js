@@ -47,13 +47,13 @@ export default SaveMenu;
 
 
 // const MenuContainer = ({ children, style }) =>
-{/* <div className="menu" style={style}>
-  {children}
-  <h1>
-    Save 1
-     </h1>
+ //<div className="menu" style={style}>
+  // {children}
+  //<h1>
+   // Save 1
+     //</h1>
 
-</div> */}
+//</div>
 
 
 
