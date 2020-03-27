@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Modal from 'react-bootstrap/Modal'
-import "./style.css"
-import { Button } from 'react-bootstrap'
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import { Button } from 'react-bootstrap';
+import "./style.css";
 
 function SaveMenu(props) {
   const [show, setShow] = useState(false);
@@ -43,19 +43,3 @@ function SaveMenu(props) {
 }
 
 export default SaveMenu;
-
-
-
-// const MenuContainer = ({ children, style }) =>
-{/* <div className="menu" style={style}>
-  {children}
-  <h1>
-    Save 1
-     </h1>
-
-</div> */}
-
-
-
-
-// export default MenuContainer;

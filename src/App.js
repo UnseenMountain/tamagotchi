@@ -6,13 +6,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Navbar } from 'react-bootstrap';
-import Footer from './components/Footer/footer.js';
+import Footer from './components/Footer/footer';
 // import Menu from './components/Menu/menu.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-import SaveMenu from './components/Save/SaveMenu.js'
-
+import SaveMenu from './components/Save/SaveMenu';
 
 //Importing Scenes
 import BootScene from "./phaser/boot";
@@ -91,7 +90,7 @@ class App extends Component {
          
             {/* <Save/> */}
           </div>
-          <SaveMenu/>
+          <SaveMenu />
           <div id="phaser-box">
             <IonPhaser game={game} initialize={initialize} />
           </div>
