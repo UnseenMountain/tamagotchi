@@ -11,7 +11,7 @@ import Footer from './components/Footer/footer';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-// import SaveMenu from './components/Save/SaveMenu';
+import SaveMenu from './components/Save/SaveMenu';
 
 //Importing Scenes
 import BootScene from "./phaser/boot";
@@ -90,7 +90,7 @@ class App extends Component {
          
             {/* <Save/> */}
           </div>
-          {/* <SaveMenu /> */}
+          <SaveMenu />
           <div id="phaser-box">
             <IonPhaser game={game} initialize={initialize} />
           </div>
