@@ -8,15 +8,16 @@ import cityTileMap from '../assets/city/City.json';
 import caveTileMap from '../assets/cave/Cave.json';
 import forestTileMap from '../assets/forest/Forest.json';
 
-//IMPORT - OBJECT FROM THE DATABASE::
-    //this.scene.start(IMPORTED SAVED SCENE)
-
 //Character sprites
 import charSprites from '../assets/RPG_assets.png';
 
 //Creatures -- MAYBE LOAD WORLDMAP CREATURES HERE BUT OTHERWISE DELETE LATER
 import dragonB from '../assets/creatures/capturecreatures/AutomatonBase.png';
 import dragonO from '../assets/creatures/capturecreatures/ToxicRoot.png';
+
+//IMPORT DB OBJECT
+//USING DB OBJECT, PASS CURRENT SCENE INTO::
+// console.log("Login Page:: ", LoginPage)
 
 let BootScene = new Phaser.Class({
 
@@ -43,7 +44,7 @@ let BootScene = new Phaser.Class({
     create: function ()
     {
         //LOADING SCREEN IF NEEDED
-        // start the WorldScene
+        // start the current Scene
         this.scene.start("WorldScene");
         //AFTER DB STUFF ADDED::
             //start at imported || WorldScene

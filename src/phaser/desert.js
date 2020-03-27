@@ -266,12 +266,12 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
         // start battle 
         this.scene.switch('BattleScene');
     },
-    onEnterWorldMap: function(player, zone) {        
+    onEnterWorldMap: function(player, zone) {
         //MODAL TO ASK IF USER WANTS TO ENTER WORLD -- if so, scene switch
         //Move the scene to the world
         this.input.stopPropagation();
         // Move to world scene 
-        this.scene.switch('WorldScene'); 
+        this.scene.start('WorldScene'); 
         this.scene.stop('DesertScene');
     },
     update: function (time, delta)

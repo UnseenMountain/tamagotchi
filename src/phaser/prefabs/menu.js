@@ -50,7 +50,7 @@ let Menu = new Phaser.Class({
             this.menuItemIndex++;
             if(this.menuItemIndex >= this.menuItems.length)
                 this.menuItemIndex = 0;
-            if(this.menuItemIndex == index)
+            if(this.menuItemIndex === index)
                 return;
         }        
         this.menuItems[this.menuItemIndex].select();
