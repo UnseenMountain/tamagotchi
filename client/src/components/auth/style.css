@@ -1,0 +1,19 @@
+a {
+    color: white;
+}
+
+.container {
+    color: white;
+}
+
+button {
+    margin-right: 0px;
+    padding: 0px;
+}
+
+
+
+#button-login{
+    min-width: 170px;
+}
+
