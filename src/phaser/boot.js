@@ -17,7 +17,7 @@ import dragonO from '../assets/creatures/capturecreatures/ToxicRoot.png';
 
 //IMPORT DB OBJECT
 //USING DB OBJECT, PASS CURRENT SCENE INTO::
-let currentScene = "WorldScene";
+// console.log("Login Page:: ", LoginPage)
 
 let BootScene = new Phaser.Class({
 
@@ -45,7 +45,7 @@ let BootScene = new Phaser.Class({
     {
         //LOADING SCREEN IF NEEDED
         // start the current Scene
-        this.scene.start(currentScene);
+        this.scene.start("WorldScene");
         //AFTER DB STUFF ADDED::
             //start at imported || WorldScene
     }

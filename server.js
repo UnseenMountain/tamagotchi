@@ -8,12 +8,19 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
 // Add routes, both API and view
 app.use(routes);
+
+//Catch-all for Heroku build
+// app.get("*", function (req, res){
+//     res.sendFile("./client/build/index.html");
+// })
 
 // Connect to Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/tamagotchi";

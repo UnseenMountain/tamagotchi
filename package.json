@@ -1,8 +1,11 @@
 {
   "name": "tamagotchi",
   "version": "0.1.0",
+  "proxy": "http://localhost:3001",
   "private": true,
   "dependencies": {
+    "@ion-phaser/core": "^1.2.2",
+    "@ion-phaser/react": "^1.2.1",
     "@material-ui/core": "^4.9.7",
     "@okta/okta-react": "^2.0.1",
     "@okta/okta-signin-widget": "^2.21.0",
@@ -14,6 +17,8 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.5.5",
     "mongoose": "^5.9.6",
     "phaser": "^3.22.0",
     "react": "^16.13.1",

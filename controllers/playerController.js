@@ -1,29 +1,34 @@
-import LoginPage from "../src/components/auth/LoginPage"
+const db = require("../models");
 
-const express = require("express");
-var router = express.Router(); 
-const Player = require("../models/Article.js");
-
-router.get("/",function(req,res){
-    console.log("get request functioning");
-    if (LoginPage.playerLoad !== null){
-        Player.find({})   //.lean() [?]
-        // execute query
-        .exec(function(error, body) {
-            //console.log("FIRING");
-            // Log any errors
-            if (error) {
-                console.log(error);
-            }
-            // Otherwise, send the body to the browser as a json object
-            else {
-                console.log("Player: ", body);
-                // res.render("index", {articles: body});
-            }
-        });
+module.exports = {
+    create: function (req, res) {
+        console.log("CREATE");
+        db.Player
+            .create({ playerId: req.params.id })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+    findAll: function (req, res) {
+        console.log('FIND ALL')
+        db.Player
+            .find()
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+    findById: function (req, res) {
+        console.log('FIND BY ID', req.params.id);
+        db.Player
+            .find({ playerId: req.params.id })
+            .then(dbPlayer => res.json(dbPlayer))
+            .catch(err => {
+                console.log("err::", err);
+                res.status(422).json(err)
+            });
+    },
+    update: function (req, res) {
+        db.Player
+            .findOneAndUpdate({ playerId: req.params.id }, req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
-});
-
-//If item received from login is not null, grab the object with the Id from the DB
-
-//If item received from login is not null, save stuff to the db
+};
