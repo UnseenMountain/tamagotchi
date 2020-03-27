@@ -4,7 +4,7 @@ module.exports = {
     create: function (req, res) {
         console.log("CREATE");
         db.Player
-            .create(req.body)
+            .create({ playerId: req.params.id })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
