@@ -7,10 +7,13 @@ a {
 }
 
 button {
-    margin-left: 10px;
+    margin-right: 0px;
     padding: 0px;
 }
+
+
 
 #button-login{
     min-width: 170px;
 }
+
