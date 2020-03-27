@@ -7,7 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Navbar } from 'react-bootstrap';
 import Footer from './components/Footer/footer';
+// import Menu from './components/Menu/menu.js';
+// import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
+// import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
+import SaveMenu from './components/Save/SaveMenu';
+
 //Importing Scenes
 import BootScene from "./phaser/boot";
 import BattleScene from "./phaser/battle";
@@ -67,6 +72,13 @@ class App extends Component {
     const { initialize, game } = this.state
     return (
       <>
+         {/* <Security issuer='https://dev-243399.okta.com/oauth2/default'
+                    clientId='0oa33m68qMWbxYgrm4x6'
+                    redirectUri={window.location.origin + '/implicit/callback'} >
+            <Route path='/' exact={true} component={Home}/>
+            <SecureRoute path='/protected' component={Menu}/>
+            <Route path='/implicit/callback' component={LoginCallback} />
+          </Security> */}
         <div>
           <div>
               <Navbar bg="dark" variant="dark">
@@ -75,8 +87,10 @@ class App extends Component {
               </Navbar>
           </div>
           
-    
+         
+            {/* <Save/> */}
           </div>
+          <SaveMenu />
           <div id="phaser-box">
             <IonPhaser game={game} initialize={initialize} />
           </div>
