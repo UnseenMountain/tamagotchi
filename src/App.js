@@ -4,11 +4,6 @@ import Phaser from "phaser";
 import { IonPhaser } from '@ion-phaser/react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-import Nav from './components/Nav/Nav.js';
-import Footer from './components/Footer/Footer.js';
-
 import { Navbar } from 'react-bootstrap';
 
 import Footer from './components/Footer/footer.js';
@@ -17,7 +12,7 @@ import Footer from './components/Footer/footer.js';
 // import { SecureRoute, Security, LoginCallback } from '@okta/okta-react';
 // import Home from './Home';
 import LoginPage from './components/auth/LoginPage';
-import SaveMenu from './components/Save/saveMenu';
+import SaveMenu from './components/Save/SaveMenu';
 
 //Importing Scenes
 import BootScene from "./phaser/boot";
