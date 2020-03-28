@@ -73,6 +73,10 @@ export default class LoginPage extends React.Component{
       })
   }
 
+  playerLogin(playerObj){
+    this.props.handler(playerObj);
+  }
+
   showLogin(){
     Backbone.history.stop();
     this.widget.renderEl({el:this.loginContainer},
@@ -104,10 +108,6 @@ export default class LoginPage extends React.Component{
       user: "",
       modal: false
     });
-  }
-
-  playerLogin(playerObj){
-    this.props.handler(playerObj)
   }
 
   render(){

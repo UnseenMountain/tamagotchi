@@ -10,16 +10,16 @@ const Footer = () => {
 
           <Card.Title></Card.Title>
           <Card.Text>
-            Project lead, character design and react by Will Satcher
+            Phaser, ion-Phaser by Will Satcher
     </Card.Text>
           <Card.Text>
-            UI UX and level design by Luke Klymshyn
+            UI UX, Front-end design by Luke Klymshyn
     </Card.Text>
           <Card.Text>
-            authorization, Mongo by Hyejin Kim
+            Authorization, Deployment by Hyejin Kim
     </Card.Text>
           <Card.Text>
-            Mongod/connection, deployment by Preston Carrol
+            MongoDB, Back-end by Preston Carroll
     </Card.Text>
 
         </Card.Body>

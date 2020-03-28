@@ -15,10 +15,6 @@ import charSprites from '../assets/RPG_assets.png';
 import dragonB from '../assets/creatures/capturecreatures/AutomatonBase.png';
 import dragonO from '../assets/creatures/capturecreatures/ToxicRoot.png';
 
-//IMPORT DB OBJECT
-//USING DB OBJECT, PASS CURRENT SCENE INTO::
-// console.log("Login Page:: ", LoginPage)
-
 let BootScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -29,6 +25,25 @@ let BootScene = new Phaser.Class({
     },
     preload: function ()
     {
+        //OR "THIS" HERE 
+        //LOADING PROGRESS BAR -- JUST LOAD EVERYTHING HERE
+        var progress = this.add.graphics();
+        // this.load.image("loadGif", loadGif);
+        // const loading = this.add.image(400, 150, "loadGif");
+
+        this.load.on('progress', function (value) {
+    
+            progress.clear();
+            progress.fillStyle(0xffffff, 1);
+            progress.fillRect(0, 270, 800 * value, 60);
+    
+        });
+    
+        this.load.on('complete', function () {
+    
+            progress.destroy();
+            // loading.destroy();
+        });
         // Load Enemies -- MAYBE LOAD WORLDMAP CREATURES HERE BUT OTHERWISE DELETE LATER
         this.load.image("dragonblue",dragonB);
         this.load.image("dragonorrange", dragonO);
@@ -46,6 +61,8 @@ let BootScene = new Phaser.Class({
         //LOADING SCREEN IF NEEDED
         // start the current Scene
         this.scene.start("WorldScene");
+        var playerObj = document.getElementById("phaser").getAttribute("player");
+        console.log("Player obj in IonPhaser:: ", playerObj);
         //AFTER DB STUFF ADDED::
             //start at imported || WorldScene
     }

@@ -11,6 +11,8 @@ import bonesSprites from '../assets/desert/tilesheets/bones.png';
 import sekihiSprites from '../assets/desert/tilesheets/sekihi01.png';
 //console.log("tileMap:: ", tileMap);
 
+import PlayerObject from "./player";
+
 let DesertScene = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -268,7 +270,14 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
     },
     onEnterWorldMap: function(player, zone) {
         //MODAL TO ASK IF USER WANTS TO ENTER WORLD -- if so, scene switch
-        //Move the scene to the world
+
+        //Take in the object with the current scene data
+        //Save the current scene to desertscene
+        const currentSave = PlayerObject.prototype.savedPlayer;
+        currentSave.location = "WorldScene";
+        PlayerObject.prototype.saveStats(currentSave);
+
+        //Stop this scene
         this.input.stopPropagation();
         // Move to world scene 
         this.scene.start('WorldScene'); 
