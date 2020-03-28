@@ -164,7 +164,7 @@ class App extends Component {
     const user = playerObj.playerId
     //Update the player object to be the object from the db
       //Saves to localstorage and is immediately pulled back up
-    PlayerObject.prototype.saveStats(playerObj /*, user  -- when Phaser isn't being sh*tty*/);
+    PlayerObject.prototype.saveStats(playerObj /*, user  -- when possible for user authentication */);
     this.setState({
     
         player: playerObj
