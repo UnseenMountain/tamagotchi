@@ -131,10 +131,14 @@ class App extends Component {
             },
             create(){
          
+              if (JSON.parse(localStorage.getItem('saveFile')) !== null){
                 let currentSaveObject = JSON.parse(localStorage.getItem('saveFile'));
                 console.log("SAVE OBJ::" , currentSaveObject);
                 let currentLocation = currentSaveObject.location;
-                this.scene.start(currentLocation || "WorldScene");
+                this.scene.start(currentLocation);
+              } else {
+                this.scene.start("WorldScene");
+              }
                 // console.log("THIS:: ", this);
 
             },
