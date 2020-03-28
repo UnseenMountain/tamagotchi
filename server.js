@@ -22,8 +22,8 @@ app.use(routes);
 //     res.sendFile("./client/build/index.html");
 // })
 
-// Connect to Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/tamagotchi";
+// Connect to Mongo DB mongodb://<dbuser>:<dbpassword>@ds153609.mlab.com:53609/heroku_721hc7zb
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:password@ds153609.mlab.com:53609/heroku_721hc7zb";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 var db = mongoose.connection;
 
