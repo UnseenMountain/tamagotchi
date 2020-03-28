@@ -1,4 +1,4 @@
-{
+[{
     "need" :    {
         "groups" : {
             "whereTheyAppear" : [
@@ -873,4 +873,4 @@
             }
         }
     }
-}
+}]

@@ -1,0 +1,21 @@
+a {
+    color: white;
+}
+
+.container {
+    color: white;
+}
+
+button {
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.user-welcome{
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#button-login{
+    min-width: 170px;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "mern",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ion-phaser/core": "^1.2.2",
+    "@ion-phaser/react": "^1.2.1",
+    "@material-ui/core": "^4.9.7",
+    "@okta/okta-react": "^2.0.1",
+    "@okta/okta-signin-widget": "^2.21.0",
+    "axios": "^0.19.2",
+    "backbone": "^1.4.0",
+    "bootstrap": "^4.4.1",
+    "http-proxy-middleware": "^1.0.3",
+    "jquery": "^3.4.1",
+    "phaser": "^3.22.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-native-sound": "^0.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -8,15 +8,22 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/tamagotchi";
+//Catch-all for Heroku build
+// app.get("*", function (req, res){
+//     res.sendFile("./client/build/index.html");
+// })
+
+// Connect to Mongo DB mongodb://<dbuser>:<dbpassword>@ds153609.mlab.com:53609/heroku_721hc7zb
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:password@ds153609.mlab.com:53609/heroku_721hc7zb" /*  || "mongodb://localhost/tomagotchi"*/
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 var db = mongoose.connection;
 
