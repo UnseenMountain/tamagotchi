@@ -26,6 +26,7 @@ module.exports = {
             });
     },
     update: function (req, res) {
+        console.log("UPDATE", req.params.id);
         db.Player
             .findOneAndUpdate({ playerId: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))

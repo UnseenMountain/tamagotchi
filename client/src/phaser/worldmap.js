@@ -1,17 +1,7 @@
 //Phaser Dependency
 import Phaser from "phaser";
-
-//Tile Dependencies
-import landBaseOne from '../assets/worldmap/tilesheets/castle4.png';
-import landBaseTwo from '../assets/worldmap/tilesheets/Dungeon_A532.png';
-import water from '../assets/worldmap/tilesheets/wateranimate2.png';
-import forest from '../assets/worldmap/tilesheets/Forest.png';
-import nature from '../assets/worldmap/tilesheets/nature2.png';
-import worldOne from '../assets/worldmap/tilesheets/World_C32.png';
-import worldTwo from '../assets/worldmap/tilesheets/WorldIcons.png';
-//console.log("tileMap:: ", tileMap);
-
-import DoorModal from "./prefabs/doormodal.js";
+// import DoorModal from "./prefabs/doormodal.js";
+import PlayerObject from "./player";
 
 let WorldScene = new Phaser.Class({
 
@@ -21,8 +11,9 @@ let WorldScene = new Phaser.Class({
     {
         Phaser.Scene.call(this, { key: 'WorldScene' });
     },
-    preload: function ()
+    create: function ()
     {
+
 /*                                                ******* _
                                                 *---******* *
                                 ~             *-----*******  *
@@ -39,29 +30,7 @@ let WorldScene = new Phaser.Class({
   /_\)   /_\)/_/\\)  /_\)  /_\)  |::|::|:|:::|           /_\)           /  \     
 _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
 /*////////////////////////////[MAP PROGRAMMING]////////////////////////////*/
-        
-        //Loading Enemies
-        this.load.image("dragonblue", "dragonB");
-        this.load.image("dragonorrange", "dragonO");
 
-        // map in json format
-        this.load.tilemapTiledJSON('worldmap', "worldTilemap");
-        // Give tile map identifiers and load them based on import
-        this.load.image('landone', landBaseOne);
-        this.load.image('landtwo', landBaseTwo);
-        this.load.image('water', water);
-        this.load.image('forest', forest);
-        this.load.image('nature', nature);
-        this.load.image('worldone', worldOne);
-        this.load.image('worldtwo', worldTwo);
-        //console.log("this.load.image('tiles', rockSprites):: ",this.load.image('tiles', rockSprites));
-
-        //What monsters to load
-        // this.load.image("dragonblue",dragonB);
-        // this.load.image("dragonorrange", dragonO);
-    },
-    create: function ()
-    {
         // create the map
         let map = this.make.tilemap({ key: 'worldmap' });
         
@@ -374,8 +343,14 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
     onEnterDesert: function(player, zone) {        
         //Countdown three seconds; if user still in area -
         //MODAL TO ASK IF USER WANTS TO ENTER DESERT -- if so, scene switch
-        //Move the scene to the Desert        
-        
+           
+        //Take in the object with the current scene data
+        //Save the current scene to desertscene    
+        const currentSave = PlayerObject.prototype.savedPlayer;
+        currentSave.location = "DesertScene";
+        PlayerObject.prototype.saveStats(currentSave);
+
+        //Stop current scene & move the scene to the Desert 
         this.scene.stop("WorldMap");
         this.input.stopPropagation();
         // USE THIS WITH MODAL TO PAUSE MODAL this.scene.pause("WorldMap");
@@ -412,7 +387,7 @@ _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O___________[ O ]
     },
 
 //            __    _
-//             =  _( }
+//         =     _( }
 //    -=   _   <<  \
 //        `.\__/`/\\    -=CHARACTER MOVEMENT
 // -=      '--'\\  `

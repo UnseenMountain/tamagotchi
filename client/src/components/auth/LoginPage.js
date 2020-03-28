@@ -73,6 +73,10 @@ export default class LoginPage extends React.Component{
       })
   }
 
+  playerLogin(playerObj){
+    this.props.handler(playerObj);
+  }
+
   showLogin(){
     Backbone.history.stop();
     this.widget.renderEl({el:this.loginContainer},
@@ -106,22 +110,8 @@ export default class LoginPage extends React.Component{
     });
   }
 
-  playerLogin(playerObj){
-    this.props.handler(playerObj)
-  }
-
   render(){
     return(
-
-      <div >
-      
-        <a href="javascript:;" onClick={e => this.modalOpen(e)}>
-         
-        <Button variant="primary">Sign Up or Log In</Button>
-        
-          
-        </a>
-
       <div>
         {this.state.user ? null : (
           <a href="javascript:;" onClick={e => this.modalOpen(e)}>
@@ -129,7 +119,6 @@ export default class LoginPage extends React.Component{
           <Button variant="primary">Click here to Sign Up or Log In</Button>
           </a>
         )}
-
         <Modal show={this.state.modal} handleClose={e => this.modalClose(e)}>
         {this.state.user ? null : (
           <div ref={(div) => {this.loginContainer = div; }} />
@@ -137,7 +126,7 @@ export default class LoginPage extends React.Component{
         </Modal>
         {this.state.user ? (
           <div className="container">
-            <div>Welcome, {this.state.user}!</div>
+            <div className="user-welcome">Welcome, {this.state.user}!</div>
             <Button variant="secondary" onClick={this.logout}>Logout</Button>
           </div>
         ) : null}
