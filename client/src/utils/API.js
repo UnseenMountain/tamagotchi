@@ -13,8 +13,8 @@ export default {
   //=========^^^^^^^^^^^WORKING^^^^^^^^^^^=========
   
   //Saves player state to the DB by id
-  updatePlayer: function(playerData) {
-    return axios.put("/api/players/" + playerData.playerId, playerData);
+  updatePlayer: function(playerId, playerData) {
+    return axios.put("/api/players/" + playerId, playerData);
   },
 
   //vvv~~May need to be post requests~~vvv
