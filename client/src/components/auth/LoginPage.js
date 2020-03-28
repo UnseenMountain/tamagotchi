@@ -15,7 +15,7 @@ export default class LoginPage extends React.Component{
     this.widget = new OktaSignIn({
       baseUrl: 'https://dev-773440.okta.com',
       clientId: '0oa3y16e0IagrZzy64x6',
-      redirectUri: 'http://localhost:3000',
+      redirectUri: 'https://fathomless-stream-68190.herokuapp.com',
       authParams: {
         issuer: "https://dev-773440.okta.com/oauth2/default",
         responseType: ['token', 'id_token'],
